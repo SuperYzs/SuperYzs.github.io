@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png">
 <meta property="article:published_time" content="2024-03-16T15:44:26.000Z">
-<meta property="article:modified_time" content="2024-03-16T16:01:28.156Z">
+<meta property="article:modified_time" content="2024-03-16T16:06:02.450Z">
 <meta property="article:author" content="Zhansheng Ye">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png">
@@ -259,7 +259,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-17 00:01:28" itemprop="dateModified" datetime="2024-03-17T00:01:28+08:00">2024-03-17</time>
+      <time title="修改时间：2024-03-17 00:06:02" itemprop="dateModified" datetime="2024-03-17T00:06:02+08:00">2024-03-17</time>
     </span>
 
   
@@ -274,21 +274,27 @@
     <div class="post-body" itemprop="articleBody"><h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
 <p>学会使用TSK工具对磁盘镜像进行电子数据校验。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有<code>kali linux</code>的虚拟机、磁盘镜像文件<code>dfr-11-mft-ntfs.dd.bz2</code>。</p>
+<p>安装有kali linux的虚拟机、磁盘镜像文件dfr-11-mft-ntfs.dd.bz2。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、使用<code>bzip2</code>命令解压文件 <code>dfr-11-mft-ntfs.dd.bz2 bzip2 -d dfr-11-mft-ntfs.dd.bz2</code></p>
-<p>2、使用<code>mmls</code>命令查看磁盘镜像的分区布局，将相关信息记录下来<code>mmls -t dosdfr-11-mft-ntfs.dd</code></p>
+<p>1、使用bzip2命令解压文件 dfr-11-mft-ntfs.dd.bz2 bzip2 -d<br />
+dfr-11-mft-ntfs.dd.bz2。</p>
+<p>2、使用mmls命令查看磁盘镜像的分区布局，将相关信息记录下来 mmls -t dos<br />
+dfr-11-mft-ntfs.dd。</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png" alt="运行程序得到的结果" /></p>
-<p>3、使用<code>dcfldd</code>命令从磁盘镜像中提取分区镜像 <code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
+<p>3、使用dcfldd命令从磁盘镜像中提取分区镜像<br />
+<code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.2.png" alt="运行程序得到的结果" /></p>
-<p>4、使用<code>fsstat</code>命令显示分区中文件系统的详细信息，查看磁盘详细信息 <code>fsstat -f ntfs ntfs.dd</code></p>
+<p>4、使用fsstat命令显示分区中文件系统的详细信息，查看磁盘详细信息 fsstat<br />
+-f ntfs ntfs.dd</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.3.png" alt="运行程序得到的结果" /></p>
-<p>5、使用<code>fls</code>命令来解析文件系统。<code>-r</code>选项用于递归遍历所有目录 <code>fls -r ntfs.dd</code></p>
+<p>5、使用fls命令来解析文件系统。-r选项用于递归遍历所有目录。 fls -r<br />
+ntfs.dd</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.4.png" alt="运行程序得到的结果" /></p>
-<p>6、使用<code>fls</code>命令显示已删除的文件和目录 <code>fls -r -d ntfs.dd</code></p>
-<p>7、使用<code>icat</code>命令恢复被删除的文件，<code>-r</code>表示如果文件被删除，<code>icat</code>将使用文件恢复技术。数字<code>41</code>是被删除文件对应的MFT表项编号，这里的<code>41</code>是<code>Sheliak.txt</code>这个文件对应的。恢复的文件保存到以前缀<code>recovered_</code>开头的文件中。<code>icat -r ntfs.dd 41\&gt;recovered_文件名</code></p>
+<p>6、使用fls命令显示已删除的文件和目录 fls -r -d ntfs.dd</p>
+<p>7、使用icat命令恢复被删除的文件，-r表示如果文件被删除，icat将使用文件恢复技术。数字41是被删除文件对应的MFT表项编号，这里的41是Sheliak.txt这个文件对应的。恢复的文件保存到以前缀recovered_开头的文件中。<br />
+icat -r ntfs.dd 41&gt;recovered_文件名</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png" alt="运行程序得到的结果" /></p>
-<p>8、使用cat命令显示恢复的文件 <code>cat recovered_文件名</code></p>
+<p>8、使用cat命令显示恢复的文件 cat recovered_文件名</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png" alt="运行程序得到的结果" /></p>
 <h1 id="试验记录"><a class="markdownIt-Anchor" href="#试验记录"></a> 试验记录</h1>
 <table>
