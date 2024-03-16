@@ -35,8 +35,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png">
 <meta property="article:published_time" content="2024-03-16T15:44:26.000Z">
-<meta property="article:modified_time" content="2024-03-16T16:06:02.450Z">
+<meta property="article:modified_time" content="2024-03-16T16:15:15.883Z">
 <meta property="article:author" content="Zhansheng Ye">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png">
 
@@ -171,7 +173,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -259,7 +261,16 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-17 00:06:02" itemprop="dateModified" datetime="2024-03-17T00:06:02+08:00">2024-03-17</time>
+      <time title="修改时间：2024-03-17 00:15:15" itemprop="dateModified" datetime="2024-03-17T00:15:15+08:00">2024-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机取证学</span></a>
+        </span>
     </span>
 
   
@@ -278,23 +289,18 @@
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
 <p>1、使用bzip2命令解压文件 dfr-11-mft-ntfs.dd.bz2 bzip2 -d<br />
 dfr-11-mft-ntfs.dd.bz2。</p>
-<p>2、使用mmls命令查看磁盘镜像的分区布局，将相关信息记录下来 mmls -t dos<br />
-dfr-11-mft-ntfs.dd。</p>
+<p>2、使用mmls命令查看磁盘镜像的分区布局，将相关信息记录下来 <code>mmls -t dosdfr-11-mft-ntfs.dd</code>。</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png" alt="运行程序得到的结果" /></p>
-<p>3、使用dcfldd命令从磁盘镜像中提取分区镜像<br />
-<code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
+<p>3、使用dcfldd命令从磁盘镜像中提取分区镜像 <code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.2.png" alt="运行程序得到的结果" /></p>
-<p>4、使用fsstat命令显示分区中文件系统的详细信息，查看磁盘详细信息 fsstat<br />
--f ntfs ntfs.dd</p>
+<p>4、使用fsstat命令显示分区中文件系统的详细信息，查看磁盘详细信息 <code>fsstat -f ntfs ntfs.dd</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.3.png" alt="运行程序得到的结果" /></p>
-<p>5、使用fls命令来解析文件系统。-r选项用于递归遍历所有目录。 fls -r<br />
-ntfs.dd</p>
+<p>5、使用fls命令来解析文件系统。-r选项用于递归遍历所有目录。 <code>fls -r ntfs.dd</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.4.png" alt="运行程序得到的结果" /></p>
-<p>6、使用fls命令显示已删除的文件和目录 fls -r -d ntfs.dd</p>
-<p>7、使用icat命令恢复被删除的文件，-r表示如果文件被删除，icat将使用文件恢复技术。数字41是被删除文件对应的MFT表项编号，这里的41是Sheliak.txt这个文件对应的。恢复的文件保存到以前缀recovered_开头的文件中。<br />
-icat -r ntfs.dd 41&gt;recovered_文件名</p>
+<p>6、使用fls命令显示已删除的文件和目录 <code>fls -r -d ntfs.dd</code></p>
+<p>7、使用icat命令恢复被删除的文件，-r表示如果文件被删除，icat将使用文件恢复技术。数字41是被删除文件对应的MFT表项编号，这里的41是Sheliak.txt这个文件对应的。恢复的文件保存到以前缀recovered_开头的文件中。<code>icat -r ntfs.dd 41\&gt;recovered_文件名</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png" alt="运行程序得到的结果" /></p>
-<p>8、使用cat命令显示恢复的文件 cat recovered_文件名</p>
+<p>8、使用cat命令显示恢复的文件 <code>cat recovered_文件名</code></p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png" alt="运行程序得到的结果" /></p>
 <h1 id="试验记录"><a class="markdownIt-Anchor" href="#试验记录"></a> 试验记录</h1>
 <table>
@@ -323,6 +329,10 @@ icat -r ntfs.dd 41&gt;recovered_文件名</p>
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -339,6 +349,9 @@ icat -r ntfs.dd 41&gt;recovered_文件名</p>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/2947dde5.html" rel="next" title="digital-forensics-lab-3">
+                  digital-forensics-lab-3 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
