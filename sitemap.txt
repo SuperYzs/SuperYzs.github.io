@@ -1,3 +1,4 @@
+http://superyzs.github.io/posts/179be3c4.html
 http://superyzs.github.io/posts/609cd352.html
 http://superyzs.github.io/posts/54097cbd.html
 http://superyzs.github.io/posts/2947dde5.html
@@ -16,6 +17,7 @@ http://superyzs.github.io/tags/index.html
 http://superyzs.github.io/
 http://superyzs.github.io/tags/Linux/
 http://superyzs.github.io/tags/C/
+http://superyzs.github.io/tags/Windows/
 http://superyzs.github.io/tags/Python/
 http://superyzs.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81%E5%AD%A6/
 http://superyzs.github.io/categories/%E6%95%B0%E5%AD%97%E8%B4%A7%E5%B8%81%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE/
