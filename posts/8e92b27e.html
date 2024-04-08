@@ -21,43 +21,44 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"superyzs.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="::: center   实验报告 :::  课程名称：[计算机取证学]{.underline} 项目编号：[实验5]{.underline} 项目名称：[NTFS 硬盘分区的恢复]{.underline} 学 院：[网络空间安全学院（研究院）]{.underline} 专 业：[密码科学与技术]{.underline} 学生姓名：[叶占胜]{.underline} 学 号： 2024年4月5">
+    <meta name="description" content="学会使用 winhex 恢复硬盘分区">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SuperYzs&#39;Blog">
-<meta property="og:url" content="http://superyzs.github.io/posts/0.html">
+<meta property="og:title" content="Ddigital-Forensics-Lab-6">
+<meta property="og:url" content="http://superyzs.github.io/posts/8e92b27e.html">
 <meta property="og:site_name" content="SuperYzs&#39;Blog">
-<meta property="og:description" content="::: center   实验报告 :::  课程名称：[计算机取证学]{.underline} 项目编号：[实验5]{.underline} 项目名称：[NTFS 硬盘分区的恢复]{.underline} 学 院：[网络空间安全学院（研究院）]{.underline} 专 业：[密码科学与技术]{.underline} 学生姓名：[叶占胜]{.underline} 学 号： 2024年4月5">
+<meta property="og:description" content="学会使用 winhex 恢复硬盘分区">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.1.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.2.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.3.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.4.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.5.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.6.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.7.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.8.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.9.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.10.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.11.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.12.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.13.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.14.png">
-<meta property="og:image" content="http://superyzs.github.io/posts/1.15.png">
-<meta property="article:published_time" content="2024-04-08T14:11:09.438Z">
-<meta property="article:modified_time" content="2024-04-08T14:10:47.805Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png">
+<meta property="article:published_time" content="2024-04-08T14:12:11.000Z">
+<meta property="article:modified_time" content="2024-04-08T14:35:08.033Z">
 <meta property="article:author" content="Zhansheng Ye">
+<meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://superyzs.github.io/posts/1.1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png">
 
 
-<link rel="canonical" href="http://superyzs.github.io/posts/0.html">
+<link rel="canonical" href="http://superyzs.github.io/posts/8e92b27e.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://superyzs.github.io/posts/0.html","path":"posts/0.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://superyzs.github.io/posts/8e92b27e.html","path":"posts/8e92b27e.html","title":"Ddigital-Forensics-Lab-6"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title> | SuperYzs'Blog</title>
+<title>Ddigital-Forensics-Lab-6 | SuperYzs'Blog</title>
   
 
 
@@ -232,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://superyzs.github.io/posts/0.html">
+    <link itemprop="mainEntityOfPage" href="http://superyzs.github.io/posts/8e92b27e.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -245,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | SuperYzs'Blog">
+      <meta itemprop="name" content="Ddigital-Forensics-Lab-6 | SuperYzs'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
+          Ddigital-Forensics-Lab-6
         </h1>
 
         <div class="post-meta-container">
@@ -262,7 +263,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-04-08 22:11:09 / 修改时间：22:10:47" itemprop="dateCreated datePublished" datetime="2024-04-08T22:11:09+08:00">2024-04-08</time>
+      <time title="创建时间：2024-04-08 22:12:11 / 修改时间：22:35:08" itemprop="dateCreated datePublished" datetime="2024-04-08T22:12:11+08:00">2024-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">计算机取证学</span></a>
+        </span>
     </span>
 
   
@@ -274,69 +284,40 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><hr />
-<hr />
-<p>::: center<br />
-<br />
-<br />
-实验报告<br />
-:::</p>
-<blockquote>
-<p>课程名称：[计算机取证学]{.underline}</p>
-<p>项目编号：[实验5]{.underline}</p>
-<p>项目名称：[NTFS 硬盘分区的恢复]{.underline}</p>
-<p>学 院：[网络空间安全学院（研究院）]{.underline}</p>
-<p>专 业：[密码科学与技术]{.underline}</p>
-<p>学生姓名：[叶占胜]{.underline}</p>
-<p>学 号：</p>
-<p>2024年4月5日</p>
-</blockquote>
-<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+    <div class="post-body" itemprop="articleBody"><h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
 <p>学会使用 winhex 恢复硬盘分区。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
 <p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
 <p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="1.1.png" alt="将 shiyan.vhd 挂载到C盘" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
 <p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
-<p><img src="1.2.png" alt="搜索结果" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
 <p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处 ：344063（0x53fff）<br />
 ，结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff）<br />
 ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
-<figure>
-<img src="1.3.png" style="width:6cm" />
-<img src="1.4.png" style="width:6cm" />
-<figcaption>第二个扇区信息</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
 <p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
-<figure>
-<img src="1.5.png" style="width:6cm" />
-<img src="1.6.png" style="width:6cm" />
-<figcaption>扇区信息修改后</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
 <p>5、保存后发现成功分区。</p>
-<figure>
-<img src="1.7.png" style="width:6cm" />
-<img src="1.8.png" style="width:6cm" />
-<figcaption>winhex显示分区成功</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
 <p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
-<p><img src="1.9.png" alt="搜索关键词 abc.txt" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
 <p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
-<p><img src="1.10.png" alt="查找16进制数值" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
 <p>8、由下图可以获取以下消息：文件大小：1B52(十进制<br />
 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
-<p><img src="1.11.png" alt="获取文件信息" />{width=&quot;10cm&quot;}</p>
-<p>9、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="1.12.png" alt="搜索搜簇号的位置" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
+9、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
 <p>10、alt + g 输入文件大小查找末bit的位置。</p>
-<figure>
-<img src="1.13.png" style="width:6cm" />
-<img src="1.14.png" style="width:6cm" />
-<figcaption>末bit的位置</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
 <p>11、保存为abc.txt，恢复成功。</p>
-<p><img src="1.15.png" alt="abc.txt的部分内容" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
 
     </div>
 
@@ -345,6 +326,9 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -430,7 +414,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"SuperYzs","repo":"BlogComments","client_id":"5c08e4832554e7a517fd","client_secret":"160583afd57209fe1f8cda60cf9114e369a13104","admin_user":"SuperYzs","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"e53f9ee3926f067be78394182dc6bcb0"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"SuperYzs","repo":"BlogComments","client_id":"5c08e4832554e7a517fd","client_secret":"160583afd57209fe1f8cda60cf9114e369a13104","admin_user":"SuperYzs","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"0f7c3c4fcd7bf896dc69c9085acac3a0"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
