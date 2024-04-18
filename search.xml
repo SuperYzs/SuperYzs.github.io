@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ddigital-Forensics-Lab-2</title>
-    <url>/posts/5d65ccb7.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>学会使用TSK工具对磁盘镜像进行电子数据校验。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有kali linux的虚拟机、磁盘镜像文件dfr-11-mft-ntfs.dd.bz2。</p>
-<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、使用bzip2命令解压文件 dfr-11-mft-ntfs.dd.bz2 <code>bzip2 -d dfr-11-mft-ntfs.dd.bz2</code></p>
-<p>2、使用mmls命令查看磁盘镜像的分区布局，将相关信息记录下来 <code>mmls -t dos dfr-11-mft-ntfs.dd</code>。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png" alt="运行程序得到的结果" /></p>
-<p>3、使用dcfldd命令从磁盘镜像中提取分区镜像 <code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.2.png" alt="运行程序得到的结果" /></p>
-<p>4、使用fsstat命令显示分区中文件系统的详细信息，查看磁盘详细信息 <code>fsstat -f ntfs ntfs.dd</code></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.3.png" alt="运行程序得到的结果" /></p>
-<p>5、使用fls命令来解析文件系统。-r选项用于递归遍历所有目录 <code>fls -r ntfs.dd</code></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.4.png" alt="运行程序得到的结果" /></p>
-<p>6、使用fls命令显示已删除的文件和目录 <code>fls -r -d ntfs.dd</code></p>
-<p>7、使用icat命令恢复被删除的文件，-r表示如果文件被删除，icat将使用文件恢复技术。数字41是被删除文件对应的MFT表项编号，这里的41是Sheliak.txt这个文件对应的。恢复的文件保存到以前缀recovered_开头的文件中 <code>icat -r ntfs.dd 41\&gt;recovered_文件名</code></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png" alt="运行程序得到的结果" /></p>
-<p>8、使用cat命令显示恢复的文件 <code>cat recovered_文件名</code></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png" alt="运行程序得到的结果" /></p>
-<h1 id="试验记录"><a class="markdownIt-Anchor" href="#试验记录"></a> 试验记录</h1>
-<table>
-<thead>
-<tr>
-<th>分区的起始扇区地址和分区结束扇区地址</th>
-<th>分区的起始扇区地址：0000000128 分区的结束扇区地址：0002091135</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>分区中文件系统详细信息</td>
-<td>FILE SYSTEM INFORMATION -------------------------------------------- File System Type: NTFS Volume Serial Number: 2ACADB0FCADAD5E3 OEM Name: NTFS Volume Name: ntfs Version: Windows XP</td>
-</tr>
-<tr>
-<td>被删除的文件名称（3个）</td>
-<td>Sheliak.txt,Vega.txt,Sulafat.txt</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>计算机取证学</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ddigital-Forensics-Lab-1</title>
     <url>/posts/c46c9d0d.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -204,6 +154,56 @@ search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步�
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ddigital-Forensics-Lab-2</title>
+    <url>/posts/5d65ccb7.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>学会使用TSK工具对磁盘镜像进行电子数据校验。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有kali linux的虚拟机、磁盘镜像文件dfr-11-mft-ntfs.dd.bz2。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、使用bzip2命令解压文件 dfr-11-mft-ntfs.dd.bz2 <code>bzip2 -d dfr-11-mft-ntfs.dd.bz2</code></p>
+<p>2、使用mmls命令查看磁盘镜像的分区布局，将相关信息记录下来 <code>mmls -t dos dfr-11-mft-ntfs.dd</code>。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.1.png" alt="运行程序得到的结果" /></p>
+<p>3、使用dcfldd命令从磁盘镜像中提取分区镜像 <code>dcfldd if=dfr-11-mft-ntfs.dd bs=512 skip=128 count=2091008 of=ntfs.dd</code></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.2.png" alt="运行程序得到的结果" /></p>
+<p>4、使用fsstat命令显示分区中文件系统的详细信息，查看磁盘详细信息 <code>fsstat -f ntfs ntfs.dd</code></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.3.png" alt="运行程序得到的结果" /></p>
+<p>5、使用fls命令来解析文件系统。-r选项用于递归遍历所有目录 <code>fls -r ntfs.dd</code></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.4.png" alt="运行程序得到的结果" /></p>
+<p>6、使用fls命令显示已删除的文件和目录 <code>fls -r -d ntfs.dd</code></p>
+<p>7、使用icat命令恢复被删除的文件，-r表示如果文件被删除，icat将使用文件恢复技术。数字41是被删除文件对应的MFT表项编号，这里的41是Sheliak.txt这个文件对应的。恢复的文件保存到以前缀recovered_开头的文件中 <code>icat -r ntfs.dd 41\&gt;recovered_文件名</code></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.5.png" alt="运行程序得到的结果" /></p>
+<p>8、使用cat命令显示恢复的文件 <code>cat recovered_文件名</code></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_2/1.6.png" alt="运行程序得到的结果" /></p>
+<h1 id="试验记录"><a class="markdownIt-Anchor" href="#试验记录"></a> 试验记录</h1>
+<table>
+<thead>
+<tr>
+<th>分区的起始扇区地址和分区结束扇区地址</th>
+<th>分区的起始扇区地址：0000000128 分区的结束扇区地址：0002091135</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分区中文件系统详细信息</td>
+<td>FILE SYSTEM INFORMATION -------------------------------------------- File System Type: NTFS Volume Serial Number: 2ACADB0FCADAD5E3 OEM Name: NTFS Volume Name: ntfs Version: Windows XP</td>
+</tr>
+<tr>
+<td>被删除的文件名称（3个）</td>
+<td>Sheliak.txt,Vega.txt,Sulafat.txt</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>计算机取证学</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -365,74 +365,49 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-5</title>
-    <url>/posts/179be3c4.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>使用 winhex 对删除的文件进行恢复。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
-<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-<p>2、找到 MFT 中 paper.zip 的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
-<p>3、ctrl + f 搜索关键词 paper 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
-<p>4、在上方复制并查找16进制数值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
-<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
-<p>6、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
-<p>7、alt + g 输入文件大小查找末bit的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
-<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-]]></content>
-      <categories>
-        <category>计算机取证学</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ddigital-Forensics-Lab-7</title>
+    <title>Ddigital-Forensics-Lab-6</title>
     <url>/posts/8e92b27e.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>学会使用 winhex 恢复硬盘分区。</p>
+<p>了解哈希、文件签名、隐写术。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
+<p>安装有 x-ways forensics 的 windows 系统、file signature test 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
-<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处） ：344063（0x53fff），结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff） ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
-<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
-<p>5、保存后发现成功分区。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
-<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
-<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
-<p>8、由下图可以获取以下消息：文件大小：1B52(十进制 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
-9、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
-<p>10、alt + g 输入文件大小查找末bit的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
-<p>11、保存为abc.txt，恢复成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
-<p><a href="https://jingyan.baidu.com/article/a24b33cd4cf08358ff002b3f.html">参考文章1</a><br />
-<a href="http://www.webkaka.com/info/archives/system/2015/05/282147/">参考文章2</a></p>
+<p>1、这个文件默认 pdf 拓展名，可以正常打开查看。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.1.png" alt="以PDF形式打开" /></p>
+<p>2、改成 zip 拓展名，依然可以打开查看。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.2.png" alt="以ZIP形式打开" /></p>
+<p>3、改成 html，打开后按提示操作，又可以生成 png、exe、mp4 格式的文件，而且全部可以打开查看。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.3.png" alt="以HTML形式打开，并将PDF文件拖入其中" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.4.png" alt="生成.ex,.mp4,.png,.pdf文件" /></p>
+<p>（上面的操作在主机中进行，接下来的操作都在虚拟机 win7 中进行）</p>
+<p>4、打开 x-ways forensics 先在 help -- setting 中把语言改为中文，然后在 文件 -- 创建案例 中创建新案例。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.5.png" alt="创建新案例" /></p>
+<p>5、打开 文件 -- 打开目录，打开文件所在目录。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.6.png" alt="打开文件目录" /></p>
+<p>6、选中带计算文件，在 专业工具 -- 磁盘快照 中进行 MD5 计算。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.7.png" alt="计算 md5 值" /></p>
+<p>7、发现未显示 md5 值，单击项目名称列表上面一行，打开显示列表，更改 md5 值为 500，发现 md5 值已经显示且都相同。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.8.png" alt="显示 md5 值" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.9.png" alt="计算 md5 值" /></p>
+<p>8、计算 sha1 值，发现并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的 sha1 值，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的 sha1 值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.10.png" alt="sha1 值不同" /></p>
+<p>9、查看文件签名：可以发现一个文件有多个不同的签名。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.11.png" alt="sha1 值不同" /></p>
+<h1 id="探究报告"><a class="markdownIt-Anchor" href="#探究报告"></a> 探究报告</h1>
+<h2 id="查看这些文件的签名是否一致"><a class="markdownIt-Anchor" href="#查看这些文件的签名是否一致"></a> 查看这些文件的签名，是否一致</h2>
+<p>答：并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的签名，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的签名。</p>
+<h2 id="上述-pdf-文件和-html-及-zip-文件为什么更改拓展名后可以被不同应用打开"><a class="markdownIt-Anchor" href="#上述-pdf-文件和-html-及-zip-文件为什么更改拓展名后可以被不同应用打开"></a> 上述 pdf 文件和 html 及 zip 文件，为什么更改拓展名后可以被不同应用打开</h2>
+<p>答：一个文件内含有多个文件签名，不同的应用程序在读取这个文件时，只找对应的文件签名部分读取。</p>
+<h2 id="取证软件对上述文件进行签名分析的结果及启示文件签名的用途及理解及局限"><a class="markdownIt-Anchor" href="#取证软件对上述文件进行签名分析的结果及启示文件签名的用途及理解及局限"></a> 取证软件对上述文件进行签名分析的结果及启示（文件签名的用途及理解及局限）</h2>
+<p>1、文件签名的用途：文件签名是一种用来识别文件类型的技术，它是一种特定的字节序列，它们出现在文件的特定位置，用来识别文件的类型。</p>
+<p>2、文件签名的理解：文件签名是一种特定的字节序列，它们出现在文件的特定位置，用来识别文件的类型。不同的应用程序在读取这个文件时，只找对应的文件签名部分读取。</p>
+<p>3、文件签名的局限性在于，一个文件不一定只有一个文件签名，所以找到某个格式的签名不能作为判断这个文件的唯一标准。</p>
+<h2 id="上述所有文件的-md5-sha1-值比对情况"><a class="markdownIt-Anchor" href="#上述所有文件的-md5-sha1-值比对情况"></a> 上述所有文件的 md5、sha1 值比对情况</h2>
+<p>答：md5 值完全相同，sha1 值并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的 sha1 值，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的 sha1 值。</p>
+<h2 id="对取证的启示"><a class="markdownIt-Anchor" href="#对取证的启示"></a> 对取证的启示</h2>
+<p>1、留心文件大小：超出正常格式大小太多的文件，很可能隐藏了其他文件。</p>
+<p>2、更改拓展名不会更改文件内容，只会更改打开该文件的默认应用，而相应的应用会打开不同的部分，因此可以被不同应用打开。</p>
+<p>3、md5 值易被碰撞，md5 值相同其他 hash 值不一定相同。</p>
 ]]></content>
       <categories>
         <category>计算机取证学</category>
@@ -484,6 +459,39 @@ FAT CONTENTS (in sectors)
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ddigital-Forensics-Lab-5</title>
+    <url>/posts/179be3c4.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>使用 winhex 对删除的文件进行恢复。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、找到 MFT 中 paper.zip 的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
+<p>3、ctrl + f 搜索关键词 paper 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
+<p>4、在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
+<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
+<p>6、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
+<p>7、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
+<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+]]></content>
+      <categories>
+        <category>计算机取证学</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -587,153 +595,47 @@ ecc-pycrypto 库中的 P256 椭圆曲线的一个简单实现。</p>
       </tags>
   </entry>
   <entry>
-    <title>Program-Compilation-and-ELF-Format-Lab-2</title>
-    <url>/posts/54097cbd.html</url>
+    <title>Ddigital-Forensics-Lab-7</title>
+    <url>/posts/8e92b27e.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>1、学习在 Linux 操作系统上进行分析所需的基本工具。</p>
-<p>2、找出隐藏在 payload 中的 flag。</p>
-<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
-<p>使用常用分析工具。</p>
+<p>学会使用 winhex 恢复硬盘分区。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>使用 binary 虚拟机，即在 Lab 1 中已经配置过的环境（包括时间戳）。</p>
-<h1 id="task-1使用-file-解决类型问题"><a class="markdownIt-Anchor" href="#task-1使用-file-解决类型问题"></a> Task 1：使用 file 解决类型问题</h1>
-<p>步骤：</p>
-<p>1、进入 chapter5 文件中，使用 file payload 指令查看 payload 文件的类型。</p>
-<p>2、使用 head payload 指令查看 payload 文件前十行得内容。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.1.png" alt="输出结果" /></p>
-<p>Q：这个文件使用了什么编码方式？</p>
-<p>A：进入在线分析网站 <a href="https://www.boxentriq.com/code-breaking/cipher-identifier">https://www.boxentriq.com/code-breaking/cipher-identifier</a> 中分析可得该编码方式为 base64 编码。并且，判断一段文本是否为 Base64 编码可以使用以下几个方法:</p>
-<p>检查字符集:Base64 编码只使用 A-Z、a-z、0-9 和 +/= 这 64 个字符。如果一段文本只包含这些字符,那很可能是 Base64 编码的。</p>
-<p>检查长度:Base64 编码后的字符串长度通常是 4 的倍数。如果一段文本的长度是 4 的倍数,那也很可能是 Base64 编码的。</p>
-<p>检查结尾:Base64 编码的结尾通常会有 = 或 == 来表示编码字符串的长度不是 4 的倍数。</p>
-<p>尝试解码:可以尝试使用 base64 命令对该文本进行解码,如果解码成功并且内容可读,那就证明该文本是 Base64 编码的。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.2.png" alt="输出结果" /></p>
-<p>3、输入 base64 -d payload &gt; decoded_payload 指令解码 payload 文件并将解码内容保存在 decoded_payload 文件中</p>
-<p>4、输入 file decode_payload 指令发现无法打开该文件，输入 file -c decode_payload 指令发现该压缩文件中有两个文件 ctf 和 67b8601。</p>
-<p>5、输入 tar zxvf decoded_payload 指令解压该文件，输入 file ctf 指令发现该文件为一个 ELF 文件，输入 file 67b8601 指令发现该文件为一个 PC bitmap 文件。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.3.png" alt="输出结果" /></p>
-<p>Q：这两个文件分别是什么类型？</p>
-<p>A：ctf文件是一个该文件为一个 ELF 文件，67b8601文件为一个 PC bitmap 文件。</p>
-<h1 id="task-2使用-ldd-探索依赖性"><a class="markdownIt-Anchor" href="#task-2使用-ldd-探索依赖性"></a> Task 2：使用 ldd 探索依赖性</h1>
-<p>步骤：</p>
-<p>1、输入 ./ctf 指令，动态链接器会提示缺少某个库文件。</p>
-<p>2、输入 ldd ctf 指令，显示出共享库和依赖关系。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.1.png" alt="输出结果" /></p>
-<p>Q：这个文件存在哪些未解析的依赖项？</p>
-<p>A：从给出的 ldd 命令输出结果可以看出，存在一个未解析的依赖项 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a>。</p>
-<p>3、输入 grep 'ELF' ./* 指令，查看所有 ELF 文件的头部信息，发现&quot;ELF&quot;字符出现在了 67b8601 文件中（输入 grep 'ELF' 67b8601 指令可以发现）。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.2.png" alt="输出结果" /></p>
-<h1 id="task-3使用-xxd-查看文件内容"><a class="markdownIt-Anchor" href="#task-3使用-xxd-查看文件内容"></a> Task 3：使用 xxd 查看文件内容</h1>
-<p>步骤：</p>
-<p>输入 xxd 67b8601 | head -n 15 指令分析 67b8601 文件的前 15 行。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/3.1.png" alt="输出结果" /></p>
-<p>Q：xxd 默认每行显示多少字节的内容？</p>
-<p>A：xxd 默认每行显示16字节的内容。</p>
-<h1 id="task-4使用-readelf-解析并提取-elf-库文件"><a class="markdownIt-Anchor" href="#task-4使用-readelf-解析并提取-elf-库文件"></a> Task 4：使用 readelf 解析并提取 ELF 库文件</h1>
-<p>步骤：</p>
-<p>1、0x7f 在偏移量为 0x35 的位置处，转换为10进制为53，因此输入 tail -c +53 67b8601 &gt; temp_elf 指令截取从偏移量 0x35 到文件末尾。</p>
-<p>2、输入 readelf -h temp_elf 指令查看 temp_elf 文件的 ELF 头部信息。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.1.png" alt="输出结果" /></p>
-<p>3、由上图可知，Start of section headers = 8568 (bytes into file)，Size of section headers = 64 (bytes)，Number of section headers = 27，由此可知 size = 10296。输入head -c 10296 temp_elf &gt; <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令将 temp_elf 文件中开头至偏移量为 10296 的内容截取到 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 文件中。</p>
-<p>4、输入 export LD_LIBRARY_PATH=/home/binary/code/chapter5 指令将当前目录添加到 LD_LIBRARY_PATH 环境变量中。</p>
-<p>5、输入 .\ctf 指令，发现程序成功运行，没有报错。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.2.png" alt="输出结果" /></p>
-<p>Q：是否一定要去除隐藏的 ELF 文件的尾部无效部分？不去除的情况下这个库文件是否还有效？</p>
-<p>A：不一定。这个库文件依然是有效的。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.3.png" alt="输出结果" /></p>
-<h1 id="task-5使用-nm-解析符号"><a class="markdownIt-Anchor" href="#task-5使用-nm-解析符号"></a> Task 5：使用 nm 解析符号</h1>
-<p>步骤：</p>
-<p>1、输入 echo $? 指令，发现其中包含的 ctf 退出状态为 1，表示有错误。</p>
-<p>2、输入 readelf -s <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，查看库文件的符号表。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.1.png" alt="输出结果" /></p>
-<p>3、输入 nm <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，显示 no symbols，说明文件已经被剥离。</p>
-<p>4、输入 nm -D <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得被修饰的符号名称。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.2.png" alt="输出结果" /></p>
-<p>5、输入 nm -D --demangle <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得多个有意义的函数。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.3.png" alt="输出结果" /></p>
-<pre><code>......
-0000000000000c60 T rc4_decrypt(rc4_state_t*, unsigned char*, int)
-0000000000000c70 T rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
-0000000000000b40 T rc4_encrypt(rc4_state_t*, unsigned char*, int)
-0000000000000bc0 T rc4_encrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
-0000000000000cb0 T rc4_init(rc4_state_t*, unsigned char*, int)
-                 U std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_create(unsigned long&amp;, unsigned long)
-                 U std::__throw_logic_error(char const*)
-</code></pre>
-<p>Q：是哪个加密算法？包含了这个加密算法的什么功能？</p>
-<p>A：这是一个包含RC4加密算法实现的库文件。这个文件包含的与RC4加密相关的函数有:rc4_init(rc4_state_t*, unsigned char*, int) - 初始化RC4加密状态,使用给定的密钥。rc4_encrypt(rc4_state_t*, unsigned char*, int) - 使用RC4加密给定的明文数据。rc4_decrypt(rc4_state_t*, unsigned char*, int) - 使用RC4解密给定的密文数据。还有一些重载函数如rc4_encrypt和rc4_decrypt接受std::string类型的数据。</p>
-<h1 id="task-6使用-strings-查找-hints"><a class="markdownIt-Anchor" href="#task-6使用-strings-查找-hints"></a> Task 6：使用 strings 查找 Hints</h1>
-<p>步骤：</p>
-<p>输入 strings ctf 指令查看二进制文件的字符串，并未找到有关的指令或者内容字符。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/6.1.png" alt="输出结果" /></p>
-<h1 id="task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"><a class="markdownIt-Anchor" href="#task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"></a> Task 7：使用 strace 和 ltrace 跟踪系统调用和库文件调用</h1>
-<p>步骤：</p>
-<p>1、输入 strace ./ctf show_me_the_flag 指令获得跟踪 ctf 的系统调用行为。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.1.png" alt="输出结果" /></p>
-<pre><code>......
-write(1, &quot;checking 'show_me_the_flag'\n&quot;, 28checking 'show_me_the_flag') = 28
-write(1, &quot;ok\n&quot;, 3ok) = 3
-exit_group(1) = ?
-</code></pre>
-<p>Q：这 3 个系统调用分别是做什么的？</p>
-<p>A：向终端输出 &quot;checking 'show_me_the_flag'\n&quot;；向终端输出 &quot;ok\n&quot;；终止当前进程及其子进程，退出状态码为 1。</p>
-<p>2、输入 ltrace -i -C ./ctf show_me_the_flag 指令可以看到初始化了加密函数，该函数位于之前提取的库文件中；接着为一个 C++ 字符串赋值，大概是用加密消息对其进行初始化；然后调用解密函数解密此消息，并将解密后的消息分配到新的 C++ 字符串。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.2.png" alt="输出结果" /></p>
-<pre><code>[0x400fe9] __libc_start_main(0x400bc0, 2, 0x7ffcb01844d8, 0x4010c0 &lt;unfinished ...&gt;
-[0x400c44] __printf_chk(1, 0x401158, 0x7ffcb01862da, 160checking 'show_me_the_flag')    = 28
-[0x400c51] strcmp(&quot;show_me_the_flag&quot;, &quot;show_me_the_flag&quot;)    = 0
-[0x400cf0] puts(&quot;ok&quot;ok) = 3
-[0x400d07] rc4_init(rc4_state_t*, unsigned char*, int)(0x7ffcb01842a0, 0x4011c0, 66, -1) = 0
-[0x400d14] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::assign(char const*)(0x7ffcb01841e0, 0x40117b, 58, 3) = 0x7ffcb01841e0
-[0x400d29] rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)(0x7ffcb0184240, 0x7ffcb01842a0, 0x7ffcb01841e0, 0x7e889f91) = 0x7ffcb0184240
-[0x400d36] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_assign(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)(0x7ffcb01841e0, 0x7ffcb0184240, 0x7ffcb0184250, 0) = 0
-[0x400d53] getenv(&quot;GUESSME&quot;)                                 = nil
-[0xffffffffffffffff] +++ exited (status 1) +++
-</code></pre>
-<p>3、输入 GUESSME='foobar' ./ctf show_me_the_flag 指令，将 GUESSME 环境变量设置为虚拟值，发现输出新的一行，提示再猜一次。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.3.png" alt="输出结果" /></p>
-<p>4、输入 GUESSME=&quot;123&quot; ltrace -i -C ./ctf show_me_the_fla 指令，ctf 继续分配并解密另一个 C++ 字符串，但是看不到有关 GUESSME 的任何提示。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.4.png" alt="输出结果" /></p>
-<h1 id="task-8使用-objdump-检查指令级别的行为"><a class="markdownIt-Anchor" href="#task-8使用-objdump-检查指令级别的行为"></a> Task 8：使用 objdump 检查指令级别的行为</h1>
-<p>步骤：</p>
-<p>1、输入 objdump -d -M intel ctf 指令，</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.1.png" alt="输出结果" /></p>
-<pre><code>ctf:     file format elf64-x86-64
-
-Contents of section .rodata:
- 401140 01000200 44454255 473a2061 7267765b  ....DEBUG: argv[
- 401150 315d203d 20257300 63686563 6b696e67  1] = %s.checking
- 401160 20272573 270a0073 686f775f 6d655f74   '%s'..show_me_t
- 401170 68655f66 6c616700 6f6b004f 89df919f  he_flag.ok.O....
- 401180 887e009a 5b38babe 27ac0e3e 434d6285  .~..[8..'..&gt;CMb.
- 401190 55868954 3848a34d 00192d76 40505e3a  U..T8H.M..-v@P^:
- 4011a0 00726200 666c6167 203d2025 730a0067  .rb.flag = %s..g
- 4011b0 75657373 20616761 696e2100 00000000  uess again!.....
- 4011c0 49742773 206b696e 6461206c 696b6520  It's kinda like 
- 4011d0 4c6f7569 7369616e 612e204f 72204461  Louisiana. Or Da
- 4011e0 676f6261 682e2044 61676f62 6168202d  gobah. Dagobah -
- 4011f0 20576865 72652059 6f646120 6c697665   Where Yoda live
- 401200 73210000 00000000                    s!......   
-</code></pre>
-<p>Q：&quot;guess again&quot;存放的地址位置是什么？</p>
-<p>A：0x4011af到0x4011b9。</p>
-<p>2、输入 objdump -d -M intel ctf 指令，查看&quot;guess again&quot;周围的指令。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.2.png" alt="输出结果" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.3.png" alt="输出结果" /></p>
-<h1 id="task-9使用-gdb-转存动态字符串缓冲区"><a class="markdownIt-Anchor" href="#task-9使用-gdb-转存动态字符串缓冲区"></a> Task 9：使用 GDB 转存动态字符串缓冲区</h1>
-<p>步骤：</p>
-<p>1、输入 gdb ./ctf 进入gbd调试程序。</p>
-<p>2、由于 rcx 出现的地址为 0x400dc8，输入 break *0x400dc8 指令设置断点。</p>
-<p>3、输入 set env GUESSME=123 指令设置 GUESSME 值为 123，输入 run show_me_the_flag 指令运行该程序，输入 output (char* )rcx 指令获得 rcx 指向的字符串&quot;Crackers Don't Matter&quot;。</p>
-<p>4、输入 quit 指令推出 gbd 调试，输入 GUESSME=&quot;Crackers Don't Matter&quot; ./ctf show_me_the_flag 指令获得最终的 flag = 84b34c124b2ba5ca224af8e33b077e9e。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.1.png" alt="输出结果" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.2.png" alt="输出结果" /></p>
+<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
+<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处） ：344063（0x53fff），结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff） ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
+<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
+<p>5、保存后发现成功分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
+<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
+<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
+<p>8、由下图可以获取以下消息：文件大小：1B52(十进制 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
+9、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
+<p>10、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
+<p>11、保存为abc.txt，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
+<p><a href="https://jingyan.baidu.com/article/a24b33cd4cf08358ff002b3f.html">参考文章1</a><br />
+<a href="http://www.webkaka.com/info/archives/system/2015/05/282147/">参考文章2</a></p>
 ]]></content>
       <categories>
-        <category>逆向工程与汇编语言</category>
+        <category>计算机取证学</category>
       </categories>
       <tags>
-        <tag>C</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -931,5 +833,155 @@ main:
       <categories>
         <category>安全协议与标准</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Program-Compilation-and-ELF-Format-Lab-2</title>
+    <url>/posts/54097cbd.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>1、学习在 Linux 操作系统上进行分析所需的基本工具。</p>
+<p>2、找出隐藏在 payload 中的 flag。</p>
+<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
+<p>使用常用分析工具。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>使用 binary 虚拟机，即在 Lab 1 中已经配置过的环境（包括时间戳）。</p>
+<h1 id="task-1使用-file-解决类型问题"><a class="markdownIt-Anchor" href="#task-1使用-file-解决类型问题"></a> Task 1：使用 file 解决类型问题</h1>
+<p>步骤：</p>
+<p>1、进入 chapter5 文件中，使用 file payload 指令查看 payload 文件的类型。</p>
+<p>2、使用 head payload 指令查看 payload 文件前十行得内容。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.1.png" alt="输出结果" /></p>
+<p>Q：这个文件使用了什么编码方式？</p>
+<p>A：进入在线分析网站 <a href="https://www.boxentriq.com/code-breaking/cipher-identifier">https://www.boxentriq.com/code-breaking/cipher-identifier</a> 中分析可得该编码方式为 base64 编码。并且，判断一段文本是否为 Base64 编码可以使用以下几个方法:</p>
+<p>检查字符集:Base64 编码只使用 A-Z、a-z、0-9 和 +/= 这 64 个字符。如果一段文本只包含这些字符,那很可能是 Base64 编码的。</p>
+<p>检查长度:Base64 编码后的字符串长度通常是 4 的倍数。如果一段文本的长度是 4 的倍数,那也很可能是 Base64 编码的。</p>
+<p>检查结尾:Base64 编码的结尾通常会有 = 或 == 来表示编码字符串的长度不是 4 的倍数。</p>
+<p>尝试解码:可以尝试使用 base64 命令对该文本进行解码,如果解码成功并且内容可读,那就证明该文本是 Base64 编码的。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.2.png" alt="输出结果" /></p>
+<p>3、输入 base64 -d payload &gt; decoded_payload 指令解码 payload 文件并将解码内容保存在 decoded_payload 文件中</p>
+<p>4、输入 file decode_payload 指令发现无法打开该文件，输入 file -c decode_payload 指令发现该压缩文件中有两个文件 ctf 和 67b8601。</p>
+<p>5、输入 tar zxvf decoded_payload 指令解压该文件，输入 file ctf 指令发现该文件为一个 ELF 文件，输入 file 67b8601 指令发现该文件为一个 PC bitmap 文件。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.3.png" alt="输出结果" /></p>
+<p>Q：这两个文件分别是什么类型？</p>
+<p>A：ctf文件是一个该文件为一个 ELF 文件，67b8601文件为一个 PC bitmap 文件。</p>
+<h1 id="task-2使用-ldd-探索依赖性"><a class="markdownIt-Anchor" href="#task-2使用-ldd-探索依赖性"></a> Task 2：使用 ldd 探索依赖性</h1>
+<p>步骤：</p>
+<p>1、输入 ./ctf 指令，动态链接器会提示缺少某个库文件。</p>
+<p>2、输入 ldd ctf 指令，显示出共享库和依赖关系。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.1.png" alt="输出结果" /></p>
+<p>Q：这个文件存在哪些未解析的依赖项？</p>
+<p>A：从给出的 ldd 命令输出结果可以看出，存在一个未解析的依赖项 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a>。</p>
+<p>3、输入 grep 'ELF' ./* 指令，查看所有 ELF 文件的头部信息，发现&quot;ELF&quot;字符出现在了 67b8601 文件中（输入 grep 'ELF' 67b8601 指令可以发现）。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.2.png" alt="输出结果" /></p>
+<h1 id="task-3使用-xxd-查看文件内容"><a class="markdownIt-Anchor" href="#task-3使用-xxd-查看文件内容"></a> Task 3：使用 xxd 查看文件内容</h1>
+<p>步骤：</p>
+<p>输入 xxd 67b8601 | head -n 15 指令分析 67b8601 文件的前 15 行。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/3.1.png" alt="输出结果" /></p>
+<p>Q：xxd 默认每行显示多少字节的内容？</p>
+<p>A：xxd 默认每行显示16字节的内容。</p>
+<h1 id="task-4使用-readelf-解析并提取-elf-库文件"><a class="markdownIt-Anchor" href="#task-4使用-readelf-解析并提取-elf-库文件"></a> Task 4：使用 readelf 解析并提取 ELF 库文件</h1>
+<p>步骤：</p>
+<p>1、0x7f 在偏移量为 0x35 的位置处，转换为10进制为53，因此输入 tail -c +53 67b8601 &gt; temp_elf 指令截取从偏移量 0x35 到文件末尾。</p>
+<p>2、输入 readelf -h temp_elf 指令查看 temp_elf 文件的 ELF 头部信息。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.1.png" alt="输出结果" /></p>
+<p>3、由上图可知，Start of section headers = 8568 (bytes into file)，Size of section headers = 64 (bytes)，Number of section headers = 27，由此可知 size = 10296。输入head -c 10296 temp_elf &gt; <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令将 temp_elf 文件中开头至偏移量为 10296 的内容截取到 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 文件中。</p>
+<p>4、输入 export LD_LIBRARY_PATH=/home/binary/code/chapter5 指令将当前目录添加到 LD_LIBRARY_PATH 环境变量中。</p>
+<p>5、输入 .\ctf 指令，发现程序成功运行，没有报错。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.2.png" alt="输出结果" /></p>
+<p>Q：是否一定要去除隐藏的 ELF 文件的尾部无效部分？不去除的情况下这个库文件是否还有效？</p>
+<p>A：不一定。这个库文件依然是有效的。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.3.png" alt="输出结果" /></p>
+<h1 id="task-5使用-nm-解析符号"><a class="markdownIt-Anchor" href="#task-5使用-nm-解析符号"></a> Task 5：使用 nm 解析符号</h1>
+<p>步骤：</p>
+<p>1、输入 echo $? 指令，发现其中包含的 ctf 退出状态为 1，表示有错误。</p>
+<p>2、输入 readelf -s <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，查看库文件的符号表。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.1.png" alt="输出结果" /></p>
+<p>3、输入 nm <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，显示 no symbols，说明文件已经被剥离。</p>
+<p>4、输入 nm -D <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得被修饰的符号名称。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.2.png" alt="输出结果" /></p>
+<p>5、输入 nm -D --demangle <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得多个有意义的函数。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.3.png" alt="输出结果" /></p>
+<pre><code>......
+0000000000000c60 T rc4_decrypt(rc4_state_t*, unsigned char*, int)
+0000000000000c70 T rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
+0000000000000b40 T rc4_encrypt(rc4_state_t*, unsigned char*, int)
+0000000000000bc0 T rc4_encrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
+0000000000000cb0 T rc4_init(rc4_state_t*, unsigned char*, int)
+                 U std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_create(unsigned long&amp;, unsigned long)
+                 U std::__throw_logic_error(char const*)
+</code></pre>
+<p>Q：是哪个加密算法？包含了这个加密算法的什么功能？</p>
+<p>A：这是一个包含RC4加密算法实现的库文件。这个文件包含的与RC4加密相关的函数有:rc4_init(rc4_state_t*, unsigned char*, int) - 初始化RC4加密状态,使用给定的密钥。rc4_encrypt(rc4_state_t*, unsigned char*, int) - 使用RC4加密给定的明文数据。rc4_decrypt(rc4_state_t*, unsigned char*, int) - 使用RC4解密给定的密文数据。还有一些重载函数如rc4_encrypt和rc4_decrypt接受std::string类型的数据。</p>
+<h1 id="task-6使用-strings-查找-hints"><a class="markdownIt-Anchor" href="#task-6使用-strings-查找-hints"></a> Task 6：使用 strings 查找 Hints</h1>
+<p>步骤：</p>
+<p>输入 strings ctf 指令查看二进制文件的字符串，并未找到有关的指令或者内容字符。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/6.1.png" alt="输出结果" /></p>
+<h1 id="task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"><a class="markdownIt-Anchor" href="#task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"></a> Task 7：使用 strace 和 ltrace 跟踪系统调用和库文件调用</h1>
+<p>步骤：</p>
+<p>1、输入 strace ./ctf show_me_the_flag 指令获得跟踪 ctf 的系统调用行为。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.1.png" alt="输出结果" /></p>
+<pre><code>......
+write(1, &quot;checking 'show_me_the_flag'\n&quot;, 28checking 'show_me_the_flag') = 28
+write(1, &quot;ok\n&quot;, 3ok) = 3
+exit_group(1) = ?
+</code></pre>
+<p>Q：这 3 个系统调用分别是做什么的？</p>
+<p>A：向终端输出 &quot;checking 'show_me_the_flag'\n&quot;；向终端输出 &quot;ok\n&quot;；终止当前进程及其子进程，退出状态码为 1。</p>
+<p>2、输入 ltrace -i -C ./ctf show_me_the_flag 指令可以看到初始化了加密函数，该函数位于之前提取的库文件中；接着为一个 C++ 字符串赋值，大概是用加密消息对其进行初始化；然后调用解密函数解密此消息，并将解密后的消息分配到新的 C++ 字符串。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.2.png" alt="输出结果" /></p>
+<pre><code>[0x400fe9] __libc_start_main(0x400bc0, 2, 0x7ffcb01844d8, 0x4010c0 &lt;unfinished ...&gt;
+[0x400c44] __printf_chk(1, 0x401158, 0x7ffcb01862da, 160checking 'show_me_the_flag')    = 28
+[0x400c51] strcmp(&quot;show_me_the_flag&quot;, &quot;show_me_the_flag&quot;)    = 0
+[0x400cf0] puts(&quot;ok&quot;ok) = 3
+[0x400d07] rc4_init(rc4_state_t*, unsigned char*, int)(0x7ffcb01842a0, 0x4011c0, 66, -1) = 0
+[0x400d14] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::assign(char const*)(0x7ffcb01841e0, 0x40117b, 58, 3) = 0x7ffcb01841e0
+[0x400d29] rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)(0x7ffcb0184240, 0x7ffcb01842a0, 0x7ffcb01841e0, 0x7e889f91) = 0x7ffcb0184240
+[0x400d36] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_assign(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)(0x7ffcb01841e0, 0x7ffcb0184240, 0x7ffcb0184250, 0) = 0
+[0x400d53] getenv(&quot;GUESSME&quot;)                                 = nil
+[0xffffffffffffffff] +++ exited (status 1) +++
+</code></pre>
+<p>3、输入 GUESSME='foobar' ./ctf show_me_the_flag 指令，将 GUESSME 环境变量设置为虚拟值，发现输出新的一行，提示再猜一次。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.3.png" alt="输出结果" /></p>
+<p>4、输入 GUESSME=&quot;123&quot; ltrace -i -C ./ctf show_me_the_fla 指令，ctf 继续分配并解密另一个 C++ 字符串，但是看不到有关 GUESSME 的任何提示。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.4.png" alt="输出结果" /></p>
+<h1 id="task-8使用-objdump-检查指令级别的行为"><a class="markdownIt-Anchor" href="#task-8使用-objdump-检查指令级别的行为"></a> Task 8：使用 objdump 检查指令级别的行为</h1>
+<p>步骤：</p>
+<p>1、输入 objdump -d -M intel ctf 指令，</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.1.png" alt="输出结果" /></p>
+<pre><code>ctf:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 401140 01000200 44454255 473a2061 7267765b  ....DEBUG: argv[
+ 401150 315d203d 20257300 63686563 6b696e67  1] = %s.checking
+ 401160 20272573 270a0073 686f775f 6d655f74   '%s'..show_me_t
+ 401170 68655f66 6c616700 6f6b004f 89df919f  he_flag.ok.O....
+ 401180 887e009a 5b38babe 27ac0e3e 434d6285  .~..[8..'..&gt;CMb.
+ 401190 55868954 3848a34d 00192d76 40505e3a  U..T8H.M..-v@P^:
+ 4011a0 00726200 666c6167 203d2025 730a0067  .rb.flag = %s..g
+ 4011b0 75657373 20616761 696e2100 00000000  uess again!.....
+ 4011c0 49742773 206b696e 6461206c 696b6520  It's kinda like 
+ 4011d0 4c6f7569 7369616e 612e204f 72204461  Louisiana. Or Da
+ 4011e0 676f6261 682e2044 61676f62 6168202d  gobah. Dagobah -
+ 4011f0 20576865 72652059 6f646120 6c697665   Where Yoda live
+ 401200 73210000 00000000                    s!......   
+</code></pre>
+<p>Q：&quot;guess again&quot;存放的地址位置是什么？</p>
+<p>A：0x4011af到0x4011b9。</p>
+<p>2、输入 objdump -d -M intel ctf 指令，查看&quot;guess again&quot;周围的指令。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.2.png" alt="输出结果" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.3.png" alt="输出结果" /></p>
+<h1 id="task-9使用-gdb-转存动态字符串缓冲区"><a class="markdownIt-Anchor" href="#task-9使用-gdb-转存动态字符串缓冲区"></a> Task 9：使用 GDB 转存动态字符串缓冲区</h1>
+<p>步骤：</p>
+<p>1、输入 gdb ./ctf 进入gbd调试程序。</p>
+<p>2、由于 rcx 出现的地址为 0x400dc8，输入 break *0x400dc8 指令设置断点。</p>
+<p>3、输入 set env GUESSME=123 指令设置 GUESSME 值为 123，输入 run show_me_the_flag 指令运行该程序，输入 output (char* )rcx 指令获得 rcx 指向的字符串&quot;Crackers Don't Matter&quot;。</p>
+<p>4、输入 quit 指令推出 gbd 调试，输入 GUESSME=&quot;Crackers Don't Matter&quot; ./ctf show_me_the_flag 指令获得最终的 flag = 84b34c124b2ba5ca224af8e33b077e9e。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.1.png" alt="输出结果" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.2.png" alt="输出结果" /></p>
+]]></content>
+      <categories>
+        <category>逆向工程与汇编语言</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
+      </tags>
   </entry>
 </search>
