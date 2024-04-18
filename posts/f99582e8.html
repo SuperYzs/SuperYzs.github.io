@@ -21,40 +21,44 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"superyzs.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"show_result":true},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="了解哈希、文件签名、隐写术。">
+    <meta name="description" content="学会使用 winhex 恢复硬盘分区">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ddigital-Forensics-Lab-6">
-<meta property="og:url" content="http://superyzs.github.io/posts/8e92b27e.html">
+<meta property="og:title" content="Ddigital-Forensics-Lab-7">
+<meta property="og:url" content="http://superyzs.github.io/posts/f99582e8.html">
 <meta property="og:site_name" content="SuperYzs&#39;Blog">
-<meta property="og:description" content="了解哈希、文件签名、隐写术。">
+<meta property="og:description" content="学会使用 winhex 恢复硬盘分区">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.3.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.4.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.5.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.6.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.7.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.8.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.9.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.10.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.11.png">
-<meta property="article:published_time" content="2024-04-18T12:13:21.000Z">
-<meta property="article:modified_time" content="2024-04-18T12:42:29.946Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png">
+<meta property="article:published_time" content="2024-04-08T14:12:11.000Z">
+<meta property="article:modified_time" content="2024-04-18T12:42:27.746Z">
 <meta property="article:author" content="Zhansheng Ye">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png">
 
 
-<link rel="canonical" href="http://superyzs.github.io/posts/8e92b27e.html">
+<link rel="canonical" href="http://superyzs.github.io/posts/f99582e8.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://superyzs.github.io/posts/8e92b27e.html","path":"posts/8e92b27e.html","title":"Ddigital-Forensics-Lab-6"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://superyzs.github.io/posts/f99582e8.html","path":"posts/f99582e8.html","title":"Ddigital-Forensics-Lab-7"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Ddigital-Forensics-Lab-6 | SuperYzs'Blog</title>
+<title>Ddigital-Forensics-Lab-7 | SuperYzs'Blog</title>
   
 
 
@@ -164,7 +168,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text"> 实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text"> 实验环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text"> 实验步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A2%E7%A9%B6%E6%8A%A5%E5%91%8A"><span class="nav-number">4.</span> <span class="nav-text"> 探究报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%99%E4%BA%9B%E6%96%87%E4%BB%B6%E7%9A%84%E7%AD%BE%E5%90%8D%E6%98%AF%E5%90%A6%E4%B8%80%E8%87%B4"><span class="nav-number">4.1.</span> <span class="nav-text"> 查看这些文件的签名，是否一致</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E8%BF%B0-pdf-%E6%96%87%E4%BB%B6%E5%92%8C-html-%E5%8F%8A-zip-%E6%96%87%E4%BB%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9B%B4%E6%94%B9%E6%8B%93%E5%B1%95%E5%90%8D%E5%90%8E%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%B8%8D%E5%90%8C%E5%BA%94%E7%94%A8%E6%89%93%E5%BC%80"><span class="nav-number">4.2.</span> <span class="nav-text"> 上述 pdf 文件和 html 及 zip 文件，为什么更改拓展名后可以被不同应用打开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E8%AF%81%E8%BD%AF%E4%BB%B6%E5%AF%B9%E4%B8%8A%E8%BF%B0%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%AD%BE%E5%90%8D%E5%88%86%E6%9E%90%E7%9A%84%E7%BB%93%E6%9E%9C%E5%8F%8A%E5%90%AF%E7%A4%BA%E6%96%87%E4%BB%B6%E7%AD%BE%E5%90%8D%E7%9A%84%E7%94%A8%E9%80%94%E5%8F%8A%E7%90%86%E8%A7%A3%E5%8F%8A%E5%B1%80%E9%99%90"><span class="nav-number">4.3.</span> <span class="nav-text"> 取证软件对上述文件进行签名分析的结果及启示（文件签名的用途及理解及局限）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E8%BF%B0%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E7%9A%84-md5-sha1-%E5%80%BC%E6%AF%94%E5%AF%B9%E6%83%85%E5%86%B5"><span class="nav-number">4.4.</span> <span class="nav-text"> 上述所有文件的 md5、sha1 值比对情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%8F%96%E8%AF%81%E7%9A%84%E5%90%AF%E7%A4%BA"><span class="nav-number">4.5.</span> <span class="nav-text"> 对取证的启示</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text"> 实验目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text"> 实验环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text"> 实验步骤</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -229,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://superyzs.github.io/posts/8e92b27e.html">
+    <link itemprop="mainEntityOfPage" href="http://superyzs.github.io/posts/f99582e8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -242,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Ddigital-Forensics-Lab-6 | SuperYzs'Blog">
+      <meta itemprop="name" content="Ddigital-Forensics-Lab-7 | SuperYzs'Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Ddigital-Forensics-Lab-6
+          Ddigital-Forensics-Lab-7
         </h1>
 
         <div class="post-meta-container">
@@ -257,9 +261,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-04-18 20:13:21 / 修改时间：20:42:29" itemprop="dateCreated datePublished" datetime="2024-04-18T20:13:21+08:00">2024-04-18</time>
+      <time title="创建时间：2024-04-08 22:12:11" itemprop="dateCreated datePublished" datetime="2024-04-08T22:12:11+08:00">2024-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-18 20:42:27" itemprop="dateModified" datetime="2024-04-18T20:42:27+08:00">2024-04-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,46 +291,38 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>了解哈希、文件签名、隐写术。</p>
+<p>学会使用 winhex 恢复硬盘分区。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 x-ways forensics 的 windows 系统、file signature test 文件。</p>
+<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、这个文件默认 pdf 拓展名，可以正常打开查看。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.1.png" alt="以PDF形式打开" /></p>
-<p>2、改成 zip 拓展名，依然可以打开查看。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.2.png" alt="以ZIP形式打开" /></p>
-<p>3、改成 html，打开后按提示操作，又可以生成 png、exe、mp4 格式的文件，而且全部可以打开查看。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.3.png" alt="以HTML形式打开，并将PDF文件拖入其中" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.4.png" alt="生成.ex,.mp4,.png,.pdf文件" /></p>
-<p>（上面的操作在主机中进行，接下来的操作都在虚拟机 win7 中进行）</p>
-<p>4、打开 x-ways forensics 先在 help -- setting 中把语言改为中文，然后在 文件 -- 创建案例 中创建新案例。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.5.png" alt="创建新案例" /></p>
-<p>5、打开 文件 -- 打开目录，打开文件所在目录。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.6.png" alt="打开文件目录" /></p>
-<p>6、选中带计算文件，在 专业工具 -- 磁盘快照 中进行 MD5 计算。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.7.png" alt="计算 md5 值" /></p>
-<p>7、发现未显示 md5 值，单击项目名称列表上面一行，打开显示列表，更改 md5 值为 500，发现 md5 值已经显示且都相同。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.8.png" alt="显示 md5 值" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.9.png" alt="计算 md5 值" /></p>
-<p>8、计算 sha1 值，发现并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的 sha1 值，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的 sha1 值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.10.png" alt="sha1 值不同" /></p>
-<p>9、查看文件签名：可以发现一个文件有多个不同的签名。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_6/1.11.png" alt="sha1 值不同" /></p>
-<h1 id="探究报告"><a class="markdownIt-Anchor" href="#探究报告"></a> 探究报告</h1>
-<h2 id="查看这些文件的签名是否一致"><a class="markdownIt-Anchor" href="#查看这些文件的签名是否一致"></a> 查看这些文件的签名，是否一致</h2>
-<p>答：并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的签名，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的签名。</p>
-<h2 id="上述-pdf-文件和-html-及-zip-文件为什么更改拓展名后可以被不同应用打开"><a class="markdownIt-Anchor" href="#上述-pdf-文件和-html-及-zip-文件为什么更改拓展名后可以被不同应用打开"></a> 上述 pdf 文件和 html 及 zip 文件，为什么更改拓展名后可以被不同应用打开</h2>
-<p>答：一个文件内含有多个文件签名，不同的应用程序在读取这个文件时，只找对应的文件签名部分读取。</p>
-<h2 id="取证软件对上述文件进行签名分析的结果及启示文件签名的用途及理解及局限"><a class="markdownIt-Anchor" href="#取证软件对上述文件进行签名分析的结果及启示文件签名的用途及理解及局限"></a> 取证软件对上述文件进行签名分析的结果及启示（文件签名的用途及理解及局限）</h2>
-<p>1、文件签名的用途：文件签名是一种用来识别文件类型的技术，它是一种特定的字节序列，它们出现在文件的特定位置，用来识别文件的类型。</p>
-<p>2、文件签名的理解：文件签名是一种特定的字节序列，它们出现在文件的特定位置，用来识别文件的类型。不同的应用程序在读取这个文件时，只找对应的文件签名部分读取。</p>
-<p>3、文件签名的局限性在于，一个文件不一定只有一个文件签名，所以找到某个格式的签名不能作为判断这个文件的唯一标准。</p>
-<h2 id="上述所有文件的-md5-sha1-值比对情况"><a class="markdownIt-Anchor" href="#上述所有文件的-md5-sha1-值比对情况"></a> 上述所有文件的 md5、sha1 值比对情况</h2>
-<p>答：md5 值完全相同，sha1 值并不完全相同：由网页生成的 mp4 文件、ex 文件和 png 文件拥有不同的 sha1 值，而之前直接改后缀的 zip 文件、html 文件、pdf 文件和 网页生成的 pdf 文件拥有相同的 sha1 值。</p>
-<h2 id="对取证的启示"><a class="markdownIt-Anchor" href="#对取证的启示"></a> 对取证的启示</h2>
-<p>1、留心文件大小：超出正常格式大小太多的文件，很可能隐藏了其他文件。</p>
-<p>2、更改拓展名不会更改文件内容，只会更改打开该文件的默认应用，而相应的应用会打开不同的部分，因此可以被不同应用打开。</p>
-<p>3、md5 值易被碰撞，md5 值相同其他 hash 值不一定相同。</p>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
+<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处） ：344063（0x53fff），结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff） ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
+<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
+<p>5、保存后发现成功分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
+<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
+<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
+<p>8、由下图可以获取以下消息：文件大小：1B52(十进制 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
+9、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
+<p>10、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
+<p>11、保存为abc.txt，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
+<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/a24b33cd4cf08358ff002b3f.html">参考文章1</a><br />
+<a target="_blank" rel="noopener" href="http://www.webkaka.com/info/archives/system/2015/05/282147/">参考文章2</a></p>
 
     </div>
 
@@ -343,11 +345,14 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/f99582e8.html" rel="prev" title="Ddigital-Forensics-Lab-7">
-                  <i class="fa fa-angle-left"></i> Ddigital-Forensics-Lab-7
+                <a href="/posts/179be3c4.html" rel="prev" title="Ddigital-Forensics-Lab-5">
+                  <i class="fa fa-angle-left"></i> Ddigital-Forensics-Lab-5
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/posts/8e92b27e.html" rel="next" title="Ddigital-Forensics-Lab-6">
+                  Ddigital-Forensics-Lab-6 <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -417,7 +422,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"SuperYzs","repo":"BlogComments","client_id":"5c08e4832554e7a517fd","client_secret":"160583afd57209fe1f8cda60cf9114e369a13104","admin_user":"SuperYzs","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"0f7c3c4fcd7bf896dc69c9085acac3a0"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"SuperYzs","repo":"BlogComments","client_id":"5c08e4832554e7a517fd","client_secret":"160583afd57209fe1f8cda60cf9114e369a13104","admin_user":"SuperYzs","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"b3bedcf90eb4a9950db5160de2bdd334"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
